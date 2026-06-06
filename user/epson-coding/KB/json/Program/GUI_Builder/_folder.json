@@ -1,0 +1,7 @@
+{
+  "type": "folder_index",
+  "toc_chapter": "GUI Builder",
+  "category": "gui_control",
+  "title": "GUI Builder",
+  "instruction": "GUI Builder properties, events, and form-control reference. Use ONLY when writing SPEL+ code that includes an RC+ operator GUI (GSet, GGet, GShow, GShowDialog). Do NOT use for robot motion or I/O commands."
+}

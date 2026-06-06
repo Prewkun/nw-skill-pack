@@ -1,0 +1,7 @@
+{
+  "type": "folder_index",
+  "toc_chapter": "Conveyor Tracking",
+  "category": "conveyor",
+  "title": "Conveyor Tracking",
+  "instruction": "Conveyor tracking — VStart, VStop, conveyor setup, and tracking parameters. Use for all conveyor-synchronised robot tasks."
+}

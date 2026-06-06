@@ -1,0 +1,7 @@
+{
+  "type": "folder_index",
+  "toc_chapter": "Force Sensing",
+  "category": "force_sensing",
+  "title": "Force Sensing",
+  "instruction": "Force sensing — force/torque objects, contact detection, and compliant motion. Use when the task involves force feedback or contact-based control."
+}

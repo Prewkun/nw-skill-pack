@@ -1,0 +1,7 @@
+{
+  "type": "folder_index",
+  "toc_chapter": "Robot Configuration",
+  "category": "robot_config",
+  "title": "Robot Configuration",
+  "instruction": "Robot configuration — arm types, local/tool frames, inertia and collision."
+}

@@ -1,0 +1,7 @@
+{
+  "type": "folder_index",
+  "toc_chapter": "RC+ API",
+  "category": "rc_api",
+  "title": "RC+ API",
+  "instruction": "RC+ API (.NET/COM) — classes, methods, properties for controlling the robot from an external host PC program. NOT for SPEL+ code."
+}

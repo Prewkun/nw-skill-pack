@@ -1,0 +1,7 @@
+{
+  "type": "folder_index",
+  "toc_chapter": "Vision Guide",
+  "category": "vision",
+  "title": "Vision Guide",
+  "instruction": "Vision Guide — vision objects, sequences, properties, results, and camera calibration. Use for vision-based pick-and-place, inspection, or any VRun/VGet task."
+}

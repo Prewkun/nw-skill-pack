@@ -14,6 +14,9 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+# Data sources
+user/epson-coding/source
+
 # Large binary — rebuild with: python scripts/kb_cleanup.py
 # Uncomment next line to exclude the pickle and force rebuild on clone
 # KB/spel_search_index.pkl
