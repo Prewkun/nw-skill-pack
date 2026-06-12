@@ -1,6 +1,6 @@
 # NW Skill Pack
 
-A personal collection of [Claude Code](https://claude.ai/code) skills, covering general engineering workflows, operations, and domain-specific tools like industrial robot programming.
+A personal collection of [Claude Code](https://claude.ai/code) skills, covering general engineering workflows, operations, and domain-specific tools like industrial robot programming and smart screwdriving systems.
 
 Skills are prompt definitions that extend Claude with reusable, slash-command-triggered behaviours. Each skill lives in its own directory with a `SKILL.md` that tells Claude what to do, when to trigger, and how to respond.
 
@@ -44,6 +44,7 @@ Custom skills tailored to specific workflows and domain knowledge.
 |---|---|
 | `brainstorming` | Structured ideation — generates, clusters, and ranks options before committing to a path |
 | `debug-mantra` | Four-step debugging discipline: reproduce → trace → falsify → breadcrumb |
+| `delta-coding` | Generates Python or PLC Modbus TCP/TCP/IP communication code for the Delta SD3 Smart Screwdriving System, grounded in the official manual KB |
 | `diagnose` | Root-cause diagnosis for unclear problems |
 | `epson-coding` | Generates EPSON SPEL+ robot programs from natural language, grounded in the official manual KB |
 | `executing-plans` | Turns a plan into a sequenced execution with checkpoints |
