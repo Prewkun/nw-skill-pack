@@ -1,0 +1,122 @@
+{
+  "code": 100,
+  "title": "Write the parameter",
+  "protocol": "Modbus",
+  "category": "Parameters",
+  "description": "Use function code #100 to set the tightening parameter. A. Add a tightening parameter. B. Modify an existing tightening parameter. First, read the parameter with function code #150. Then, modify and write the parameter with function code #100.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "100"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Parameter ID",
+      "description": "1 to 500"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "100"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Start: Max. torque < Min. torque",
+    "2": "Start: Max. angle < Min. angle",
+    "3": "Rundown: Max. torque < Min. torque",
+    "4": "Rundown: Max. angle < Min. angle",
+    "5": "Pre-tightening: Max. torque < Min. torque",
+    "6": "Pre-tightening: Max. angle < Min. angle",
+    "7": "Tightening: Max. torque < Min. torque",
+    "8": "Tightening: Max. angle < Min. angle",
+    "9": "Check if the stage sequence of the tightening settings is correct",
+    "10": "No parameters set for this stage",
+    "11": "Rundown: The set torque < Min. torque",
+    "12": "Rundown: The set torque > Max. torque",
+    "13": "Pre-tightening: The set torque < Min. torque",
+    "14": "Pre-tightening: The set torque > Max. torque",
+    "15": "Tightening: The set torque < Min. torque",
+    "16": "Tightening: The set torque > Max. torque",
+    "17": "The set angle > 32767",
+    "18": "The set torque > Tool spec. torque",
+    "19": "The set torque > Tool max. torque",
+    "20": "The set speed > Tool max. speed",
+    "21": "Rundown: Torque cannot be 0",
+    "22": "Pre-tightening: Torque cannot be 0",
+    "23": "Tightening: Torque cannot be 0",
+    "24": "The set rundown torque > The set pre -tightening torque",
+    "25": "The set rundown torque > The set tightening torque",
+    "26": "The set pre -tightening torque > The set tightening torque",
+    "27": "The set clamp torque — > Max. clamp torque",
+    "28": "Max. clamp torque — < Min. clamp torque",
+    "29": "Max. clamp torque — > Tool max. torque",
+    "30": "Tightening: The set speed < — Min. speed",
+    "32": "General: The set timeout > 32767",
+    "33": "General: The set max. total angle > 32767",
+    "34": "Start: Min. operation time > Max. operation time",
+    "35": "Rundown: Min. operation time > Max. operation time",
+    "36": "Pre-tightening: Min. operation time > Max. operation time",
+    "37": "Tightening: Min. operation time > Max. operation time",
+    "38": "General: The set tightening timeout > Max. operation time of the stage",
+    "39": "Linked prevail torque cannot be 0",
+    "40": "Cannot set multiple torque rates",
+    "41": "Max. clamp angle — < Min. clamp angle",
+    "42": "Cannot set multiple — clamp torque s or angles",
+    "47": "Tightening speed > Pre -tightening speed",
+    "48": "Start speed > Rundown speed",
+    "49": "Pre-tightening speed > Rundown speed",
+    "50": "Tightening speed > Rundown speed",
+    "51": "Start: Max. torque > Tightening torque",
+    "52": "Start: Min. torque > Tightening torque",
+    "53": "Rundown: Max. torque > Tightening torque",
+    "54": "Rundown: Min. torque > Tightening torque",
+    "55": "Rundown: Max. torque > Tightening torque",
+    "56": "Rundown: Min. torque > Tightening torque",
+    "57": "Pre-tightening: Max. torque > Tightening torque",
+    "58": "Pre-tightening: Min. torque > Tightening torque",
+    "59": "Parameter not applicable to this model",
+    "61": "The set torque < Min. torque",
+    "62": "The set torque > Max. torque",
+    "63": "Max. torque < Min. torque",
+    "64": "Max. angle < Min. angle",
+    "65": "Min. operation time > Max. operation time",
+    "100": "Parameter ID exceeds — the range of 1 to 500",
+    "101": "Tool 1 / Tool 2 must be — 0 or 1",
+    "102": "Title string is null",
+    "103": "Title already exists"
+  },
+  "notes": ""
+}

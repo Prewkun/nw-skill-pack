@@ -1,0 +1,53 @@
+{
+  "code": 523,
+  "title": "Write t he monitor function when parameters do not match the tool",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #523 to set the function for monitoring if the tool torque of the operating parameter match es that of the connected tool .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "523"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Monitor function when",
+      "description": ""
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "523"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

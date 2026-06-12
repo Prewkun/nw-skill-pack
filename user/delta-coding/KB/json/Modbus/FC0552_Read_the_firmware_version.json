@@ -1,0 +1,48 @@
+{
+  "code": 552,
+  "title": "Read the firmware version",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #552 to read the firmware version of the controller.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "552"
+    },
+    {
+      "register": "C9",
+      "field": "Controller firmware v ersion",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "552"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "D2 to F9",
+      "field": "Controller firmware v ersion",
+      "description": "ASCII code  (40 words)"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

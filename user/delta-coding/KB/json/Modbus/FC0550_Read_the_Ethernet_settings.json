@@ -1,0 +1,83 @@
+{
+  "code": 550,
+  "title": "Read the Ethernet settings",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #550 to read the Ethernet settings.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "550"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "550"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "D2",
+      "field": "IP1 address",
+      "description": "Default: 192"
+    },
+    {
+      "register": "D3",
+      "field": "IP2 address",
+      "description": "Default: 168"
+    },
+    {
+      "register": "D4",
+      "field": "IP3 address",
+      "description": "Default: 1"
+    },
+    {
+      "register": "D5",
+      "field": "IP4 address",
+      "description": "Default: 11"
+    },
+    {
+      "register": "D6",
+      "field": "Subnet mask 1",
+      "description": "Default: 255"
+    },
+    {
+      "register": "D7",
+      "field": "Subnet mask 2",
+      "description": "Default: 255"
+    },
+    {
+      "register": "D8",
+      "field": "Subnet mask 3",
+      "description": "Default: 255"
+    },
+    {
+      "register": "D9",
+      "field": "Subnet mask 4",
+      "description": "Default: 0"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

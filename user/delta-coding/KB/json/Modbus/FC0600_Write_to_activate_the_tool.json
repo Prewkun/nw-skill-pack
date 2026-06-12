@@ -1,0 +1,61 @@
+{
+  "code": 600,
+  "title": "Write to activate the tool",
+  "protocol": "Modbus",
+  "category": "Tool",
+  "description": "Use function code #600 to activate Tool 1 or Tool 2.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "600"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Tool activation",
+      "description": "0: Off; 1: On"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "600"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "2": "Tool activation — Must be 0 or 1"
+  },
+  "notes": ""
+}

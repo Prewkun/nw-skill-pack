@@ -1,0 +1,53 @@
+{
+  "code": 522,
+  "title": "Write the TCP data content of the result for each screw",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #522 to set the TCP data content of the result for each screw .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "522"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "TCP data content of the",
+      "description": ""
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "522"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

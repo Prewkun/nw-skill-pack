@@ -1,0 +1,53 @@
+{
+  "code": 210,
+  "title": "Write to delete the sequence",
+  "protocol": "Modbus",
+  "category": "Sequence",
+  "description": "Use function code #210 to delete the tightening sequence .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "210"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "The ID to be deleted",
+      "description": "0: all the sequence s"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "210"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

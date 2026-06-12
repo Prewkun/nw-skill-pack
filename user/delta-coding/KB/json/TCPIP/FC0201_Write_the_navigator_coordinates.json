@@ -1,0 +1,190 @@
+{
+  "code": 201,
+  "title": "Write the navigator coordinates",
+  "protocol": "TCPIP",
+  "category": "Sequence",
+  "description": "Use function code #201 to set the navigator coordinates of screws . Note: first, set the coordinates of screws with function code #2 01. Then, set the navigator image code s corresponding to screws with function code #20 2.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "201 C900",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sequence ID",
+      "description": "1 to 500 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "Screw ID 1 - X axis position",
+      "description": "0 to 740 6400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Screw ID 1 - Y axis position",
+      "description": "0 to 460 6400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Screw ID 2 - X axis position",
+      "description": "0 to 740 C800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Screw ID 2 - Y axis position",
+      "description": "0 to 460 6400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Screw ID 3 - X axis position",
+      "description": "0 to 740 2C10",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Screw ID 3 - Y axis position",
+      "description": "0 to 460 6400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "Screw ID 4 - X axis position",
+      "description": "0 to 740 6400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "35 - 36",
+      "field": "Screw ID 4 - Y axis position",
+      "description": "0 to 460 C800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "37 - 38",
+      "field": "Screw ID 5 - X axis position",
+      "description": "0 to 740 6400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "39 - 40",
+      "field": "Screw ID 5 - Y axis position",
+      "description": "0 to 460 2C10",
+      "example_hex": ""
+    },
+    {
+      "bytes": "401 - 402",
+      "field": "Screw ID 96 - X axis position",
+      "description": "0 to 740 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "403 - 404",
+      "field": "Screw ID 96 - Y axis position",
+      "description": "0 to 460 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "405 - 406",
+      "field": "Screw ID 97 - X axis position",
+      "description": "0 to 740 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "407 - 408",
+      "field": "Screw ID 97 - Y axis position",
+      "description": "0 to 460 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "409 - 410",
+      "field": "Screw ID 98 - X axis position",
+      "description": "0 to 740 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "411 - 412",
+      "field": "Screw ID 98 - Y axis position",
+      "description": "0 to 460 0000",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "201 C900",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sequence ID",
+      "description": "1 to 500 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "201 C900",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {
+    "1": "Sequence ID — Exceeds the range of 1 to 500",
+    "2": "Axis p osition — exceed s the"
+  },
+  "notes": "first, set the coordinates of screws with function code #2 01. Then, set the navigator image code s corresponding to screws with function code #20 2. Handshake signal description: 1. Send the request to set the navigator coordinates of up to 100 screws. Byte Write / Read request Description Example (Hex) 1 - 2 Function code 201 C900 3 - 4 Version number - 0000 5 - 6 Sequence ID 1 to 500 0100 7 - 12 Reserved 6 bytes … 13 - 14 Request to send command - 0100 15 - 20 Reserved 6 bytes … 21 - 22 Screw ID 1 - X axis position 0 to 740 6400 23 - 24 Screw ID 1 - Y axis position 0 to 460 6400 25 - 26 Screw ID 2 - X axis position 0 to 740 C800 27 - 28 Screw ID 2 - Y axis position 0 to 460 6400 29 - 30 Screw ID 3 - X axis position 0 to 740 2C10 31 - 32 Screw ID 3 - Y axis position 0 to 460 6400 33 - 34 Screw ID 4 - X axis position 0 to 740 6400 35 - 36 Screw ID 4 - Y axis position 0 to 460 C800 37 - 38 Screw ID 5 - X axis position 0 to 740 6400 39 - 40 Screw ID 5 - Y axis position 0 to 460 2C10 … Screw ID N - X axis position 0 to 740 0000 … Screw ID N - Y axis position 0 to 460 0000 401 - 402 Screw ID 96 - X axis position 0 to 740 0000 403 - 404 Screw ID 96 - Y axis position 0 to 460 0000 405 - 406 Screw ID 97 - X axis position 0 to 740 0000 407 - 408 Screw ID 97 - Y axis position 0 to 460 0000 409 - 410 Screw ID 98 - X axis position 0 to 740 0000 411 - 412 Screw ID 98 - Y axis position 0 to 460 0000 Completed Correct the written content according to the error code 1. Send request to write the navigator coordinates 2. Wait for the return status OK NOK Byte Write / Read request Description Example (Hex) 413 - 414 Screw ID 99 - X axis position 0 to 740 0000 415 - 416 Screw ID 99 - Y axis position 0 to 460 0000 417 - 418 Screw ID 100 - X axis position 0 to 740 0000 419 - 420 Screw ID 100 - Y axis position 0 to 460 0000 2. Check whether the writing is successful from the return status. Byte Return status Description Example (Hex) 1 - 2 Function code 201 C900 3 - 4 Return data length Unit: Word 0A00 5 - 6 Sequence ID 1 to 500 0100 7 - 14 Reserved 8 bytes … 15 - 16 Return function code 201 C900 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 If successful, the read status is 1. If failed, the read status is 2. The error codes are as follows: Code Error description Description 1 Sequence ID Exceeds the range of 1 to 500 2 Axis p osition exceed s the range X axis : exceed s the range of 0 to 740 Y axis: exceed s the range of 0 to 460"
+}

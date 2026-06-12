@@ -1,0 +1,56 @@
+{
+  "code": 202,
+  "title": "Write the navigator image code s",
+  "protocol": "Modbus",
+  "category": "Sequence",
+  "description": "Use function code #202 to set the navigator image code s corresponding to the screws . Note: first, set the coordinates of screws with function code #201. Then, set the navigator image code s corresponding to the screws with function code #20 2.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "202"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Sequence ID",
+      "description": "1 to 500"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "202"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Sequence ID — Exceeds the range of 1 to 500",
+    "2": "Image — code exceed s the"
+  },
+  "notes": "first, set the coordinates of screws with function code #201. Then, set the navigator image code s corresponding to the screws with function code #20 2. Handshake signal description: 1. Fill in the navigator image code s of up to 100 screws to 0xD2 - 0x135. Modbus (Hex) Function Description D2 Screw ID 1 - displayed image 0: no display 1: image A 2: image B 3: image C D3 Screw ID 2 - displayed image D4 Screw ID 3 - displayed image D5 Screw ID 4 - displayed image D6 Screw ID 5 - displayed image … Screw ID N - displayed image 131 Screw ID 96 - displayed image 132 Screw ID 97 - displayed image 133 Screw ID 98 - displayed image 134 Screw ID 99 - displayed image 135 Screw ID 100 - displayed image 2. Fill in the write request to 0xC8 - 0xCE. Modbus (Hex) Write / Read request Write C8 Function code 202 C9 Version number 0 CA Sequence ID 1 to 500 CB to CD Reserved - CE Request to send command 1 (to be filled in last ) 1. Fill in the navig ator image codes 0xD2 - 0x135 Completed Correct the written content according to the error code 2. Send request to write the navigator image codes 0xC8 - 0xCE 3. Wait for the return status 0xCF - 0xD1 OK NOK 3. Check whether the writing is successful from the return status in 0xCF - 0xD1. Modbus (Hex) Return status Description CF Function code 202 D0 Status 1: OK; 2: NOK D1 Error code - If successful, the read status (0xD0) is 1. If failed, the read status (0xD 0) is 2. The error codes are as follows: Code Error description Description 1 Sequence ID Exceeds the range of 1 to 500 2 Image code exceed s the range Exceeds the range of 0 to 3"
+}

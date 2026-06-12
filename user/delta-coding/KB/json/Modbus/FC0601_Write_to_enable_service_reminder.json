@@ -1,0 +1,61 @@
+{
+  "code": 601,
+  "title": "Write to enable service reminder",
+  "protocol": "Modbus",
+  "category": "Tool",
+  "description": "Use function code #601 to turn on or off the tool service reminder.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "601"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Service reminder",
+      "description": "0: Off; 1: On"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "601"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "2": "Service reminder — Must be 0 or 1"
+  },
+  "notes": ""
+}

@@ -1,0 +1,58 @@
+{
+  "code": 506,
+  "title": "Write the buzzer sound pattern",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #506 to set the buzzer sound pattern s.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "506"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Sound pattern of error signal",
+      "description": ""
+    },
+    {
+      "register": "CC",
+      "field": "Sound pattern of finished",
+      "description": ""
+    },
+    {
+      "register": "CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function",
+      "description": "code  506"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

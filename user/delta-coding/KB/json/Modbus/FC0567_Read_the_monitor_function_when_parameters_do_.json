@@ -1,0 +1,48 @@
+{
+  "code": 567,
+  "title": "Read the monitor function when parameters do not match the tool",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #567 to read the function setting for monitoring if the tool torque of the operating parameter match es that of the connected tool .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "567"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "567"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Monitor function",
+      "description": "when"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

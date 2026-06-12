@@ -1,0 +1,136 @@
+{
+  "code": 202,
+  "title": "Write the navigator image code s",
+  "protocol": "TCPIP",
+  "category": "Sequence",
+  "description": "Use function code #202 to set the navigator image code s corresponding to the screws . Note: first, set the coordinates of screws with function code #201. Then, set the navigator image code s corresponding to the screws with function code #20 2.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "202 CA00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sequence ID",
+      "description": "1 to 500 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "Screw ID 1 - displayed image",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Screw ID 2 - displayed image",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Screw ID 3 - displayed image",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Screw ID 4 - displayed image",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Screw ID 5 - displayed image",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "211 - 212",
+      "field": "Screw ID 96 - displayed image",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "213 - 214",
+      "field": "Screw ID 97 - displayed image",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "215 - 216",
+      "field": "Screw ID 98 - displayed image",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "217 - 218",
+      "field": "Screw ID 99 - displayed image",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "219 - 220",
+      "field": "Screw ID 100 - displayed image",
+      "description": "0000",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "202 CA00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sequence ID",
+      "description": "1 to 500 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {
+    "1": "Sequence ID — Exceeds the range of 1 to 500",
+    "2": "Image — code exceed s the range Exceeds the range of 0 to 3"
+  },
+  "notes": "first, set the coordinates of screws with function code #201. Then, set the navigator image code s corresponding to the screws with function code #20 2. Handshake signal description: 1. Send the request to write the navigator image code s of up to 100 screws . Byte Write / Read request Description Example (Hex) 1 - 2 Function code 202 CA00 3 - 4 Version number - 0000 5 - 6 Sequence ID 1 to 500 0100 7 - 12 Reserved 6 bytes … 13 - 14 Request to send command - 0100 15 - 20 Reserved 6 bytes … 21 - 22 Screw ID 1 - displayed image 0: no display 1: image A 2: image B 3: image C 0100 23 - 24 Screw ID 2 - displayed image 0100 25 - 26 Screw ID 3 - displayed image 0100 27 - 28 Screw ID 4 - displayed image 0100 29 - 30 Screw ID 5 - displayed image 0100 … Screw ID N - displayed image 0000 211 - 212 Screw ID 96 - displayed image 0000 213 - 214 Screw ID 97 - displayed image 0000 215 - 216 Screw ID 98 - displayed image 0000 217 - 218 Screw ID 99 - displayed image 0000 219 - 220 Screw ID 100 - displayed image 0000 2. Check whether the writing is successful from the return status. Byte Return status Description Example (Hex) 1 - 2 Function code 202 CA00 3 - 4 Return data length Unit: Word 0A00 5 - 6 Sequence ID 1 to 500 0100 7 - 14 Reserved 8 bytes … Completed Correct the written content according to the error code 1. Send request to write the navigator image codes 2. Wait for the return status OK NOK Byte Return status Description Example (Hex) 15 - 16 Return function code 202 CA00 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 If successful, the read status is 1. If failed, the read status is 2. The error codes are as follows: Code Error description Description 1 Sequence ID Exceeds the range of 1 to 500 2 Image code exceed s the range Exceeds the range of 0 to 3"
+}

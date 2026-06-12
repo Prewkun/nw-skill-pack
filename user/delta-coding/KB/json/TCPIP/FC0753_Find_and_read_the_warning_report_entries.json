@@ -1,0 +1,121 @@
+{
+  "code": 753,
+  "title": "Find and read the warning report entries",
+  "protocol": "TCPIP",
+  "category": "Reports",
+  "description": "Use function code #753 with bytes 233 - 234 to read the content of the warning report. Byte Tool 1 / Tool 2 common status 233 - 234 Current No. of warning report entries Handshake signal description: 1. Send the request to find and read the warning report entries . Byte Write / Read request Description Example (Hex) 1 - 2 Function code 753 F102 3 - 4 Version number - 0000 5 - 6 Warning report ID 1 to 60000 0: the latest warning report 0100 7 - 12 Reserved 6 bytes … 13 - 14 Request to send command - 0100 1. Send request to find and read the warning report entries Completed Correct the read request according to the error code 2. Wait for the return status OK NOK 2. Check whether the reading is successful from the return status and read the content of the warning report . Byte Return status Description Example (Hex) 1 - 2 Function code 753 F102 3 - 4 Return data length Unit: Word 1100 5 - 6 Warning report ID 1 to 60000 0: the latest warning report 0100 7 - 14 Reserved 8 bytes … 15 - 16 Return function code 753 F102 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 21 - 22 Date / Time Year E607 23 - 24 Month 0B00 25 - 26 Day 1C00 27 - 28 Hour 1200 29 - 30 Minute 1100 31 - 32 Second 1000 33 - 34 WN code Refer to CH12* 5005 Note: 0x 5001 - 0x5999: Tool 1 operation warning (WN); 0x6000 - 0x6999: Tool 2 operation warning (WN). If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Warning report ID Exceeds the range of 0 to 60000",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "753 F102",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Warning report ID",
+      "description": "1 to 60000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "753 F102",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  1100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Warning report ID",
+      "description": "1 to 60000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "753 F102",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Month",
+      "description": "0B00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Day 1C00",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Hour",
+      "description": "1200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Minute",
+      "description": "1100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Second",
+      "description": "1000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "WN code",
+      "description": "Refer to CH12*  5005",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": "0x 5001 - 0x5999: Tool 1 operation warning (WN); 0x6000 - 0x6999: Tool 2 operation warning (WN). If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Warning report ID Exceeds the range of 0 to 60000"
+}

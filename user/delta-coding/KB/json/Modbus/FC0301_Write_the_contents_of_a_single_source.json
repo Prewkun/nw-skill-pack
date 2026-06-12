@@ -1,0 +1,66 @@
+{
+  "code": 301,
+  "title": "Write the contents of a single source",
+  "protocol": "Modbus",
+  "category": "Sources",
+  "description": "Use function code #301 to set the tightening source. A. Add a single tightening source for each tool . B. Modify the settings for an existing tightening source. First, read the settings of a single source with function code #351. Then, modify and write the settings with function code #301.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "301"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Switching method",
+      "description": "ID Manual: 1"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send",
+      "description": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "301"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Switching method — ID Exceeds the range of 1 to 500",
+    "2": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "10": "Source — for the switching method Must be 0 or 1",
+    "11": "Sequence / Parameter ID — Exceeds the range of 1 to 500",
+    "12": "Total screw quantity — Exceeds the range of 1 to 999999",
+    "13": "Bit ID — Exceeds the range of 0 to 255",
+    "20": "Single screw — tightening"
+  },
+  "notes": ""
+}

@@ -1,0 +1,37 @@
+{
+  "code": 515,
+  "title": "Write the display of upper limit for each stage of curves",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #515 to set whether to display the upper limit for each stage of the curves .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "515"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Display the upper limit for",
+      "description": ""
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [],
+  "error_codes": {},
+  "notes": ""
+}

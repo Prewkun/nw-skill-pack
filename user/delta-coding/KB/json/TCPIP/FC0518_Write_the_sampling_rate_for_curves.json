@@ -1,0 +1,85 @@
+{
+  "code": 518,
+  "title": "Write the sampling rate for curves",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #518 to set the sampling rate for curve s.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "518 0602",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sampling rate for",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send",
+      "description": "",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "518 0602",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sampling rate for",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "518 0602",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

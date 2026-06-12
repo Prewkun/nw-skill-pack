@@ -1,0 +1,62 @@
+{
+  "code": 150,
+  "title": "Read the parameter",
+  "protocol": "Modbus",
+  "category": "Parameters",
+  "description": "Use function code #150 to read the tightening parameter. A. Obtain the content of an existing tightening parameter. B. Check whether the tightening parameter has been set.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "150"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Parameter ID",
+      "description": "1 to 500"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "150"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Parameter ID — Exceeds the range of 1 to 500",
+    "2": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "3": "Parameter content — Not set"
+  },
+  "notes": ""
+}

@@ -1,0 +1,73 @@
+{
+  "code": 561,
+  "title": "Read file format of the exported result f or each screw",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #561 to read the file format of the exported result for each screw .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "561 3102",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 12",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "561 3102",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "File format of the exported",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "561 3102",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK  0100",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

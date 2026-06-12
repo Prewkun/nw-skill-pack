@@ -1,0 +1,48 @@
+{
+  "code": 568,
+  "title": "Read the default angle unit",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #568 to read the default angle unit of the controller .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "568"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "568"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Default a ngle unit",
+      "description": "0: degree"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

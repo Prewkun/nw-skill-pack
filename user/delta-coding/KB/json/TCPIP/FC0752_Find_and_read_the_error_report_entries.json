@@ -1,0 +1,115 @@
+{
+  "code": 752,
+  "title": "Find and read the error report entries",
+  "protocol": "TCPIP",
+  "category": "Reports",
+  "description": "Use function code #752 with bytes 231 - 232 to read the content of the error report. Byte Tool 1 / Tool 2 common status 231 - 232 Current No. of error report entries",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "752 F002",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Error report ID",
+      "description": "1 to 60000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "752 F002",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  1100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Error report ID",
+      "description": "1 to 60000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "752 F002",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Month",
+      "description": "0B00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Day 1C00",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Hour",
+      "description": "1200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Minute",
+      "description": "1100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Second",
+      "description": "1000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": "0x1001 - 0x1999: Tool 1 device alarm (AL); 0x2000 - 0x2999: Tool 2 device alarm (AL). 0x3001 - 0x3999: Tool 1 tightening error (NG); 0x4000 - 0x4999: Tool 2 tightening error (NG). If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Error report ID Exceeds the range of 0 to 60000"
+}

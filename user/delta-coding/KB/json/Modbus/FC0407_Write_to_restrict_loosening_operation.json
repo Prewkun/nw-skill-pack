@@ -1,0 +1,58 @@
+{
+  "code": 407,
+  "title": "Write to restrict loosening operation",
+  "protocol": "Modbus",
+  "category": "Results",
+  "description": "Use function code #407 to restrict the transducerized smart screwdrive r from performing loosening operations until you use function code #407 again to remove the restriction .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "407"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Restrict operation /",
+      "description": ""
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be  filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "407"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

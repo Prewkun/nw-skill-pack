@@ -1,0 +1,78 @@
+{
+  "code": 572,
+  "title": "Read the RS-485 settings",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #572 to read the RS-485 settings .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "572"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "572"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "D2",
+      "field": "Function On / Off",
+      "description": "0: Off; 1: On"
+    },
+    {
+      "register": "D3",
+      "field": "Station",
+      "description": "0 to 255"
+    },
+    {
+      "register": "D4",
+      "field": "RTU / ASCII",
+      "description": "0: RTU; 1: ASCII"
+    },
+    {
+      "register": "D5",
+      "field": "Baud rate",
+      "description": "0: 9600 ; 1: 19200 ; 2: 38400"
+    },
+    {
+      "register": "D6",
+      "field": "Data bit",
+      "description": "0: 8-bit; 1: 7-bit"
+    },
+    {
+      "register": "D7",
+      "field": "Parity",
+      "description": "bit 0: None ; 1: Odd; 2: Even"
+    },
+    {
+      "register": "D8",
+      "field": "Stop bit",
+      "description": "0: 2-bit; 1: 1-bit"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

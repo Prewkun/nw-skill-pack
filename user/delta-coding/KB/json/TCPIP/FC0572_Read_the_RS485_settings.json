@@ -1,0 +1,109 @@
+{
+  "code": 572,
+  "title": "Read the RS-485 settings",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #572 to read the RS-485 settings .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "572 3C02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 12",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send",
+      "description": "command  - 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "572 3C02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 14",
+      "field": "Reserved",
+      "description": "10 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "572 3C02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "Function On / Off",
+      "description": "0: Off; 1: On 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Station",
+      "description": "0 to 255 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "RTU / ASCII",
+      "description": "0: RTU",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Baud rate",
+      "description": "0: 9600",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Data bit",
+      "description": "0: 8-bit",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Parity",
+      "description": "bit 0: None",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "Stop bit",
+      "description": "0: 2-bit",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

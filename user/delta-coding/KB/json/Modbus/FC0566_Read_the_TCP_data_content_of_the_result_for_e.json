@@ -1,0 +1,48 @@
+{
+  "code": 566,
+  "title": "Read the TCP data content of the result for each screw",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #566 to read the TCP data content of the result for each screw .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "566"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "566"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "TCP data",
+      "description": "conte nt of the result"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

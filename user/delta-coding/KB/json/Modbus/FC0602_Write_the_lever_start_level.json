@@ -1,0 +1,66 @@
+{
+  "code": 602,
+  "title": "Write the lever start level",
+  "protocol": "Modbus",
+  "category": "Tool",
+  "description": "Use function code #602 to set the lever start level of the tool.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "602"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Threshold for On",
+      "description": "level 0 to 4095"
+    },
+    {
+      "register": "CC",
+      "field": "Threshold for O ff level 0 to 4095",
+      "description": ""
+    },
+    {
+      "register": "CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "602"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "2": "Threshold value — Exceeds the range of 0 to 4095"
+  },
+  "notes": ""
+}

@@ -1,0 +1,53 @@
+{
+  "code": 526,
+  "title": "Write the display orientation of external screen",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #526 to set the display orientation of the external screen (HDMI) .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "526"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Display orientation",
+      "description": "0: portrait"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "526"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

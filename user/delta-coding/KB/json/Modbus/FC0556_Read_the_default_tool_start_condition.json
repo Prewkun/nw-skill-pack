@@ -1,0 +1,48 @@
+{
+  "code": 556,
+  "title": "Read the default tool start condition",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #556 to read the default tool start condition.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "556"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "556"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Default tool start condition",
+      "description": "0: push start"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

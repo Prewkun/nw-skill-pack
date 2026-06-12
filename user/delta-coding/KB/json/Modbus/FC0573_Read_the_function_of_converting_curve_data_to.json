@@ -1,0 +1,48 @@
+{
+  "code": 573,
+  "title": "Read the function of converting curve data to positive values",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #573 to read whether the function of converting curve data to positive values is enabled .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "573"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "573"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Function of converting curve",
+      "description": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

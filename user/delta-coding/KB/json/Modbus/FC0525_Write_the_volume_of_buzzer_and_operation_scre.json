@@ -1,0 +1,58 @@
+{
+  "code": 525,
+  "title": "Write the volume of buzzer and operation screen buttons",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #525 to set the volume of buzzer and operation screen buttons .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "525"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Volume of buzzer",
+      "description": "0 to 100"
+    },
+    {
+      "register": "CB",
+      "field": "Volume of operation screen",
+      "description": ""
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "525"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

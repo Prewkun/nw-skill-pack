@@ -1,0 +1,48 @@
+{
+  "code": 564,
+  "title": "Read the compensation for tool temperature rise",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #564 to read whether the compensation for tool temperature rise is enabled .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "564"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "564"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Compensation for tool",
+      "description": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

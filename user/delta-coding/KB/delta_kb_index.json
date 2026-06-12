@@ -1,0 +1,1400 @@
+[
+  {
+    "code": 100,
+    "title": "Write the parameter",
+    "protocol": "Modbus",
+    "category": "Parameters"
+  },
+  {
+    "code": 110,
+    "title": "Write to delete the parameter",
+    "protocol": "Modbus",
+    "category": "Parameters"
+  },
+  {
+    "code": 150,
+    "title": "Read the parameter",
+    "protocol": "Modbus",
+    "category": "Parameters"
+  },
+  {
+    "code": 200,
+    "title": "Write the sequence",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 201,
+    "title": "Write the navigator coordinates",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 202,
+    "title": "Write the navigator image code s",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 203,
+    "title": "Write the coordinates of positioning arm",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 210,
+    "title": "Write to delete the sequence",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 250,
+    "title": "Read the sequence",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 251,
+    "title": "Read the navigator coordinates",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 252,
+    "title": "Read the navigator image code s",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 253,
+    "title": "Read the coordinates of positioning arm",
+    "protocol": "Modbus",
+    "category": "Sequence"
+  },
+  {
+    "code": 300,
+    "title": "Write the operati ng mode and switching method of source",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 301,
+    "title": "Write the contents of a single source",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 302,
+    "title": "Write to switch parameter under manual setting",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 303,
+    "title": "Write to switch sequence under manual setting",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 310,
+    "title": "Write to delete the source",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 350,
+    "title": "Read the operati ng mode and switching method of source",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 351,
+    "title": "Read the contents of a single source",
+    "protocol": "Modbus",
+    "category": "Sources"
+  },
+  {
+    "code": 400,
+    "title": "Write the switching method of source",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 401,
+    "title": "Write the barcode string",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 402,
+    "title": "Write to clear all errors",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 403,
+    "title": "Write to reset the operation progress",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 404,
+    "title": "Write to force execute the previous step",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 405,
+    "title": "Write to force execute the next step",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 406,
+    "title": "Write to restrict tightening operation",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 407,
+    "title": "Write to restrict loosening operation",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 408,
+    "title": "Write the scanner advanced settings",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 409,
+    "title": "Write to clear the single screw tightening NOK count",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 410,
+    "title": "Write to clear the single screw loosening NOK count",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 411,
+    "title": "Write to reset the operation time",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 412,
+    "title": "Write to reset the operation status",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 450,
+    "title": "Read the switching method of source",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 451,
+    "title": "Read the barcode string",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 452,
+    "title": "Read the scanner advanced settings",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 453,
+    "title": "Read the tightening status indicator",
+    "protocol": "Modbus",
+    "category": "Results"
+  },
+  {
+    "code": 500,
+    "title": "Write the request for permissions login",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 501,
+    "title": "Write the request for password change",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 502,
+    "title": "Write the request for permissions logout",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 503,
+    "title": "Write the page permissions",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 504,
+    "title": "Write the Ethernet settings",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 505,
+    "title": "Write t he request for factory reset",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 506,
+    "title": "Write the buzzer sound pattern",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 507,
+    "title": "Write the DI/DO functions",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 508,
+    "title": "Write the DI/DO conversion table",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 509,
+    "title": "Write the default torque unit",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 510,
+    "title": "Write the default tool start condition",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 511,
+    "title": "Write NO / NC contact setting for a single DI/DO",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 512,
+    "title": "Write to export all system data",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 513,
+    "title": "Write to import all system data",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 514,
+    "title": "Write the default two -stage mode under self -defined torque control",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 515,
+    "title": "Write the display of upper limit for each stage of curves",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 516,
+    "title": "Write the display of operation warning window",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 517,
+    "title": "Write file format of the exported result f or each screw",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 518,
+    "title": "Write the sampling rate for curves",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 519,
+    "title": "Write the function of always monitoring the current",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 520,
+    "title": "Write the compensation for tool temperature rise",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 521,
+    "title": "Write the peripheral device settings",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 522,
+    "title": "Write the TCP data content of the result for each screw",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 523,
+    "title": "Write t he monitor function when parameters do not match the tool",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 524,
+    "title": "Write the default angle unit",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 525,
+    "title": "Write the volume of buzzer and operation screen buttons",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 526,
+    "title": "Write the display orientation of external screen",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 527,
+    "title": "Write the home screen",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 528,
+    "title": "Write the RS-485 settings",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 529,
+    "title": "Write the function of converting curve data to positive values",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 550,
+    "title": "Read the Ethernet settings",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 551,
+    "title": "Read the page permissions",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 552,
+    "title": "Read the firmware version",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 553,
+    "title": "Read the DI/DO functions",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 554,
+    "title": "Read the DI/DO conversion table",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 555,
+    "title": "Read the default torque unit",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 556,
+    "title": "Read the default tool start condition",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 557,
+    "title": "Read NO / NC contact setting for a single DI/DO",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 558,
+    "title": "Read the default two -stage mode under self -defined torque control",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 559,
+    "title": "Read the display of upper limit for each stage of curves",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 560,
+    "title": "Read the display of operation warning window",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 561,
+    "title": "Read file format of the exported result f or each screw",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 562,
+    "title": "Read the sampling rate for curves",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 563,
+    "title": "Read the function of always monitoring the current",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 564,
+    "title": "Read the compensation for tool temperature rise",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 565,
+    "title": "Read the peripheral device settings",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 566,
+    "title": "Read the TCP data content of the result for each screw",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 567,
+    "title": "Read the monitor function when parameters do not match the tool",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 568,
+    "title": "Read the default angle unit",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 569,
+    "title": "Read the volume of buzzer and operation screen buttons",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 570,
+    "title": "Read the display orientation of external screen",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 571,
+    "title": "Read the home screen",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 572,
+    "title": "Read the RS-485 settings",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 573,
+    "title": "Read the function of converting curve data to positive values",
+    "protocol": "Modbus",
+    "category": "Controller"
+  },
+  {
+    "code": 600,
+    "title": "Write to activate the tool",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 601,
+    "title": "Write to enable service reminder",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 602,
+    "title": "Write the lever start level",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 603,
+    "title": "Write the push start level",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 604,
+    "title": "Write the work light brightness",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 606,
+    "title": "Write the LED light settings",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 607,
+    "title": "Write to calibrate the tool",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 650,
+    "title": "Read the tool information",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 651,
+    "title": "Read the lever start level",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 652,
+    "title": "Read the push start level",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 653,
+    "title": "Read the work light brightness",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 655,
+    "title": "Read the LED light settings",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 656,
+    "title": "Read the tool calibration setting",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 657,
+    "title": "Read the tool firmware version",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 658,
+    "title": "Read the status of service reminder",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 659,
+    "title": "Read the status of tool activation",
+    "protocol": "Modbus",
+    "category": "Tool"
+  },
+  {
+    "code": 700,
+    "title": "Clear the production report entries",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 701,
+    "title": "Clear the error and warning report entries",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 702,
+    "title": "Clear the production report files",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 750,
+    "title": "Find and read the production report entries",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 751,
+    "title": "Find and read curves",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 752,
+    "title": "Find and read the error report entries",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 753,
+    "title": "Find and read the warning report entries",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 754,
+    "title": "Find and read the button report entries",
+    "protocol": "Modbus",
+    "category": "Reports"
+  },
+  {
+    "code": 20,
+    "title": "Write the operational status value",
+    "protocol": "TCPIP",
+    "category": "Operational"
+  },
+  {
+    "code": 30,
+    "title": "Write the function of automatically send ing the TCP data content of the",
+    "protocol": "TCPIP",
+    "category": "Operational"
+  },
+  {
+    "code": 50,
+    "title": "Read the operational status value",
+    "protocol": "TCPIP",
+    "category": "Operational"
+  },
+  {
+    "code": 60,
+    "title": "Write the setting of automatically send ing the TCP data content of the result",
+    "protocol": "TCPIP",
+    "category": "Operational"
+  },
+  {
+    "code": 80,
+    "title": "Read the setting of automatically sending the TCP data content of the result",
+    "protocol": "TCPIP",
+    "category": "Operational"
+  },
+  {
+    "code": 100,
+    "title": "Write the parameter",
+    "protocol": "TCPIP",
+    "category": "Parameters"
+  },
+  {
+    "code": 110,
+    "title": "Write to delete the parameter",
+    "protocol": "TCPIP",
+    "category": "Parameters"
+  },
+  {
+    "code": 150,
+    "title": "Read the parameter",
+    "protocol": "TCPIP",
+    "category": "Parameters"
+  },
+  {
+    "code": 200,
+    "title": "Write the sequence",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 201,
+    "title": "Write the navigator coordinates",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 202,
+    "title": "Write the navigator image code s",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 203,
+    "title": "Write the coordinates of positioning arm",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 210,
+    "title": "Write to delete the sequence",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 250,
+    "title": "Read the sequence",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 251,
+    "title": "Read the navigator coordinates",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 252,
+    "title": "Read the navigator image code s",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 253,
+    "title": "Read the coordinates of positioning arm",
+    "protocol": "TCPIP",
+    "category": "Sequence"
+  },
+  {
+    "code": 300,
+    "title": "Write the operati ng mode and switching method of source",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 301,
+    "title": "Write the contents of a single source",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 302,
+    "title": "Write to switch parameter under manual setting",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 303,
+    "title": "Write to switch sequence under manual setting",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 310,
+    "title": "Write to delete the source",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 350,
+    "title": "Read the operati ng mode and switching method of source",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 351,
+    "title": "Read the contents of a single source",
+    "protocol": "TCPIP",
+    "category": "Sources"
+  },
+  {
+    "code": 400,
+    "title": "Write the switching method of source",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 401,
+    "title": "Write the barcode string",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 402,
+    "title": "Write to clear all errors",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 403,
+    "title": "Write to reset the operation progress",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 404,
+    "title": "Write to force execute the previous step",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 405,
+    "title": "Write to force execute the next step",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 406,
+    "title": "Write to restrict tightening operation",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 407,
+    "title": "Write to restrict loosening operation",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 408,
+    "title": "Write the scanner advanced settings",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 409,
+    "title": "Write to clear the single screw tightening NOK count",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 410,
+    "title": "Write to clear the single screw loosening NOK count",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 411,
+    "title": "Write to reset the operation time",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 412,
+    "title": "Write to reset the operation status",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 450,
+    "title": "Read the switching method of source",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 451,
+    "title": "Read the barcode string",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 452,
+    "title": "Read the scanner advanced settings",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 453,
+    "title": "Read the tightening status indicator",
+    "protocol": "TCPIP",
+    "category": "Results"
+  },
+  {
+    "code": 500,
+    "title": "Write the request for permissions login",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 501,
+    "title": "Write the request for password change",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 502,
+    "title": "Write the request for permissions logout",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 503,
+    "title": "Write the page permissions",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 504,
+    "title": "Write the Ethernet settings",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 505,
+    "title": "Write t he request for factory reset",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 506,
+    "title": "Write the buzzer sound pattern",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 507,
+    "title": "Write the DI/DO functions",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 508,
+    "title": "Write the DI/DO conversion table",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 509,
+    "title": "Write the default torque unit",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 510,
+    "title": "Write the default tool start condition",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 511,
+    "title": "Write NO / NC contact setting for a single DI/DO",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 512,
+    "title": "Write to export all system data",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 513,
+    "title": "Write to import all system data",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 514,
+    "title": "Write the default two -stage mode under self-defined torque control",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 515,
+    "title": "Write the display of upper limit for each stage of curves",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 516,
+    "title": "Write the display of operation warning window",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 517,
+    "title": "Write file format of the exported result f or each screw",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 518,
+    "title": "Write the sampling rate for curves",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 519,
+    "title": "Write the function of always monitoring the current",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 520,
+    "title": "Write the compensation for tool temperature rise",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 521,
+    "title": "Write the peripheral device settings",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 522,
+    "title": "Write the TCP data content of the result for each screw",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 523,
+    "title": "Write t he monitor function when parameters do not match the tool",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 524,
+    "title": "Write the default angle unit",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 525,
+    "title": "Write the volume of buzzer and operation screen buttons",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 526,
+    "title": "Write the display orientation of external screen",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 527,
+    "title": "Write the home screen",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 528,
+    "title": "Write the RS-485 settings",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 529,
+    "title": "Write the function of converting curve data to positive values",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 550,
+    "title": "Read the Ethernet settings",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 551,
+    "title": "Read the page permissions",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 552,
+    "title": "Read the firmware version",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 553,
+    "title": "Read the DI/DO functions",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 554,
+    "title": "Read the DI/DO conversion table",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 555,
+    "title": "Read the default torque unit",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 556,
+    "title": "Read the default tool start condition",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 557,
+    "title": "Read NO / NC contact setting for a single DI/DO",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 558,
+    "title": "Read the default two -stage mode under self -defined torque control",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 559,
+    "title": "Read the display of upper limit for each stage of curves",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 560,
+    "title": "Read the display of operation warning window",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 561,
+    "title": "Read file format of the exported result f or each screw",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 562,
+    "title": "Read the sampling rate for curves",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 563,
+    "title": "Read the function of always monitoring the current",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 564,
+    "title": "Read the compensation for tool temperature rise",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 565,
+    "title": "Read the peripheral device settings",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 566,
+    "title": "Read the TCP data content of the result for each screw",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 567,
+    "title": "Read the monitor function when parameters do not match the tool",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 568,
+    "title": "Read the default angle unit",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 569,
+    "title": "Read the volume of buzzer and operation screen buttons",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 570,
+    "title": "Read the display orientation of external screen",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 571,
+    "title": "Read the home screen",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 572,
+    "title": "Read the RS-485 settings",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 573,
+    "title": "Read the function of converting curve data to positive values",
+    "protocol": "TCPIP",
+    "category": "Controller"
+  },
+  {
+    "code": 600,
+    "title": "Write to activate the tool",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 601,
+    "title": "Write to enable service reminder",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 602,
+    "title": "Write the lever start level",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 603,
+    "title": "Write the push start level",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 604,
+    "title": "Write the work light brightness",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 606,
+    "title": "Write the LED light settings",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 607,
+    "title": "Write to calibrate the tool",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 650,
+    "title": "Read the tool information",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 651,
+    "title": "Read the lever start level",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 652,
+    "title": "Read the push start level",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 653,
+    "title": "Read the work light brightness",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 655,
+    "title": "Read the LED light settings",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 656,
+    "title": "Read the tool calibration setting",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 657,
+    "title": "Read the tool firmware version",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 658,
+    "title": "Read the status of service reminder",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 659,
+    "title": "Read the status of tool activation",
+    "protocol": "TCPIP",
+    "category": "Tool"
+  },
+  {
+    "code": 700,
+    "title": "Clear the production report entries",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 701,
+    "title": "Clear the error and warning report entries",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 702,
+    "title": "Clear the production report files",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 750,
+    "title": "Find and read the production report entries",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 751,
+    "title": "Find and read curves",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 752,
+    "title": "Find and read the error report entries",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 753,
+    "title": "Find and read the warning report entries",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  },
+  {
+    "code": 754,
+    "title": "Find and read the button report entries",
+    "protocol": "TCPIP",
+    "category": "Reports"
+  }
+]

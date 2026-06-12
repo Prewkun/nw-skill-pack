@@ -1,0 +1,81 @@
+{
+  "code": 607,
+  "title": "Write to calibrate the tool",
+  "protocol": "Modbus",
+  "category": "Tool",
+  "description": "Use function code #607 to set the precision of the tool.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "607"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Precision",
+      "description": "0 to 32767"
+    },
+    {
+      "register": "1400",
+      "field": "for 12 kgf -cm models",
+      "description": ""
+    },
+    {
+      "register": "3500",
+      "field": "for 30 kgf -cm models",
+      "description": ""
+    },
+    {
+      "register": "6000",
+      "field": "for 50 kgf -cm models",
+      "description": ""
+    },
+    {
+      "register": "5705",
+      "field": "for 75 kgf -cm models )",
+      "description": ""
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "607"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "2": "Precision — Exceeds the range of 0 to 32767"
+  },
+  "notes": ""
+}

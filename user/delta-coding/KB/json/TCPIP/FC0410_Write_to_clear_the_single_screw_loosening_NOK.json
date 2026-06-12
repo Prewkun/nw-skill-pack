@@ -1,0 +1,85 @@
+{
+  "code": 410,
+  "title": "Write to clear the single screw loosening NOK count",
+  "protocol": "TCPIP",
+  "category": "Results",
+  "description": "Use function code #410 to clear the single screw loosening NOK count . Byte Tool 1 status / Tool 2 status Tool 1 Tool 2 55 - 56 155 - 156 Single screw loosening NOK count (L) 57 - 58 157 - 158 Single screw loosening NOK count (H) Handshake signal description: 1. Send the request to clear the single screw loosening NOK count. Byte Write / Read request Description Example (Hex) 1 - 2 Function code 410 9A01 3 - 4 Version number - 0000 5 - 6 Tool 1 / Tool 2 0: Tool 1; 1: Tool 2 0000 7 - 12 Reserved 6 bytes … 13 - 14 Request to send command - 0100 2. Check whether the writing is successful from the return status. Byte Return status Description Example (Hex) 1 - 2 Function code 410 9A01 3 - 4 Return data length Unit: Word 0A00 5 - 6 Tool 1 / Tool 2 0: Tool 1; 1: Tool 2 0000 7 - 14 Reserved 8 bytes … 15 - 16 Return function code 410 9A01 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Tool 1 / Tool 2 Must be 0 or 1 Completed Correct the written content according to the error code 1. Send request to clear the single screw loosening NOK count 2. Wait for the return status OK NOK",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "410 9A01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "410 9A01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "410 9A01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

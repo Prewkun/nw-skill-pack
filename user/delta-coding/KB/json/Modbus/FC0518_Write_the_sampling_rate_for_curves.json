@@ -1,0 +1,53 @@
+{
+  "code": 518,
+  "title": "Write the sampling rate for curves",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #518 to set the sampling rate for curve s.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "518"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Sampling rate for curves",
+      "description": "0: 10 ms →2 ms when start"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "518"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

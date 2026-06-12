@@ -1,0 +1,109 @@
+{
+  "code": 506,
+  "title": "Write the buzzer sound pattern",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #506 to set the buzzer sound pattern s.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "506 FA01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sound pattern of error signal buzzer",
+      "description": "0: mute",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Sound pattern of finished signal",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 10",
+      "field": "Sound pattern of finished signal",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "11 - 12",
+      "field": "Reserved",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "506 FA01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sound pattern of error signal buzzer",
+      "description": "0: mute",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Sound pattern of finished signal",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 10",
+      "field": "Sound pattern of finished signal",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "11 - 14",
+      "field": "Reserved",
+      "description": "4 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "506 FA01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

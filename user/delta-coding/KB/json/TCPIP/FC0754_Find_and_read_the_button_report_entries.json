@@ -1,0 +1,163 @@
+{
+  "code": 754,
+  "title": "Find and read the button report entries",
+  "protocol": "TCPIP",
+  "category": "Reports",
+  "description": "Use function code #754 with bytes 239 - 240 and bytes 241 - 242 to read the content of the button report. Byte Tool 1 / Tool 2 common status 239 - 240 Current No. of button report entries (L) 241 - 242 Current No. of button report entries (H)",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "754 F202",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Button",
+      "description": "report ID  1 to 60000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "754 F202",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  1600",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Button",
+      "description": "report ID  1 to 60000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "754 F202",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Month",
+      "description": "0B00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Day 1E00",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Hour",
+      "description": "0800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Minute",
+      "description": "3500",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Second",
+      "description": "3300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "Button ID",
+      "description": "Refer to Section 11.4 Button",
+      "example_hex": ""
+    },
+    {
+      "bytes": "35 - 36",
+      "field": "Value before change (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "0",
+      "field": "to 4294967295",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "37 - 38",
+      "field": "Value before change (H)",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "39 - 40",
+      "field": "Value after change (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "0",
+      "field": "to 4294967295",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "41 - 42",
+      "field": "Value after change (H)",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "43 - 44",
+      "field": "Permissions account",
+      "description": "0: reserved",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

@@ -1,0 +1,187 @@
+{
+  "code": 521,
+  "title": "Write the peripheral device settings",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #521 to write the peripheral device settings .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "521 0902",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "RS-232 connector function",
+      "description": "0: disabled",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "RS-485 connector function",
+      "description": "A800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Host connector function",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Tool 1 positioning arm -",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Tool 1 positioning arm -",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Tool 1 - X axis position offset (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "Tool 1 - X axis position offset (H) 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "35 - 36",
+      "field": "Tool 1 - Y axis position offset (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "37 - 38",
+      "field": "Tool 1 - Y axis position offset (H) 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "39 - 40",
+      "field": "Tool 1 - Z axis position offset (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "41 - 42",
+      "field": "Tool 1 - Z axis position offset (H) 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "43 - 44",
+      "field": "Tool 2 positioning arm -",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "45 - 46",
+      "field": "Tool 2 positioning arm -",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "47 - 48",
+      "field": "Tool 2 - X axis position offset (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "49 - 50",
+      "field": "Tool 2 - X axis position offset (H) 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "51 - 52",
+      "field": "Tool 2 - Y axis position offset (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "53 - 54",
+      "field": "Tool 2 - Y axis position offset (H) 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "55 - 56",
+      "field": "Tool 2 - Z axis position offset (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "57 - 58",
+      "field": "Tool 2 - Z axis position offset (H) 0000",
+      "description": "",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "521 0902",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 14",
+      "field": "Reserved",
+      "description": "10 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "521 0902",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK  0100",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}
