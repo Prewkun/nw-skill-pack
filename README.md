@@ -44,6 +44,7 @@ Custom skills tailored to specific workflows and domain knowledge.
 |---|---|
 | `brainstorming` | Structured ideation — generates, clusters, and ranks options before committing to a path |
 | `debug-mantra` | Four-step debugging discipline: reproduce → trace → falsify → breadcrumb |
+| `delta-coding` | Generates Modbus TCP / TCP/IP communication code for the Delta SD3 Smart Screwdriving System, grounded in the official manual KB |
 | `diagnose` | Root-cause diagnosis for unclear problems |
 | `epson-coding` | Generates EPSON SPEL+ robot programs from natural language, grounded in the official manual KB |
 | `executing-plans` | Turns a plan into a sequenced execution with checkpoints |
