@@ -1,0 +1,115 @@
+{
+  "code": 550,
+  "title": "Read the Ethernet settings",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #550 to read the Ethernet settings.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "550 2602",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 12",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "550 2602",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  1200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 14",
+      "field": "Reserved",
+      "description": "10 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "550 2602",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "IP1 address",
+      "description": "Default: 192  C000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "IP2 address",
+      "description": "Default: 168  A800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "IP3 address",
+      "description": "Default: 1  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "IP4 address",
+      "description": "Default: 11  0B00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "Subnet mask 1",
+      "description": "Default: 255  FF00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "Subnet mask 2",
+      "description": "Default: 255  FF00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "Subnet mask 3",
+      "description": "Default: 255  FF00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "35 - 36",
+      "field": "Subnet mask 4",
+      "description": "Default: 0  0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

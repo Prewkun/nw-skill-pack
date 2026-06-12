@@ -1,0 +1,53 @@
+{
+  "code": 520,
+  "title": "Write the compensation for tool temperature rise",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #520 to set the compensation for tool temperature rise .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "520"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Compensation for tool",
+      "description": ""
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "520"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

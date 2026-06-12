@@ -1,0 +1,85 @@
+{
+  "code": 510,
+  "title": "Write the default tool start condition",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #510 to set the default tool start condition. Note: for example, first set the default tool start condition to “DI” with function code # 510. Then, set the DI function to “start tightening ” or “start loosening ” with function code # 507 or #511 to operate the tool through DI .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "510 FE01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Default tool start condition",
+      "description": "0: push start",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "510 FE01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Default tool start condition",
+      "description": "0: push start",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "510 FE01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": "for example, first set the default tool start condition to “DI” with function code # 510. Then, set the DI function to “start tightening ” or “start loosening ” with function code # 507 or #511 to operate the tool through DI . Handshake signal description: 1. Send the request to write the default tool start condition. Byte Write / Read request Description Example (Hex) 1 - 2 Function code 510 FE01 3 - 4 Version number - 0000 5 - 6 Default tool start condition 0: push start 1: DI 2: lever start 3: push start or lever start 4: push start and lever start 0300 7 - 12 Reserved 6 bytes … 13 - 14 Request to send command - 0100 2. Check whether the writing is successful from the return status . Byte Return status Description Example (Hex) 1 - 2 Function code 510 FE01 3 - 4 Return data length Unit: Word 0A00 5 - 6 Default tool start condition 0: push start 1: DI 2: lever start 3: push start or lever start 4: push start and lever start 0300 7 - 14 Reserved 8 bytes … 15 - 16 Return function code 510 FE01 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Tool s tart condition Exceeds the range of 0 to 4 Completed Correct the written content according to the error code 1. Send request to write the default tool start condition 2. Wait for the return status OK NOK"
+}

@@ -1,0 +1,63 @@
+{
+  "code": 557,
+  "title": "Read NO / NC contact setting for a single DI/DO",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #557 to read the NO / NC contact of a single DI/DO .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "557"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "DO / DI",
+      "description": "0: DO; 1: DI"
+    },
+    {
+      "register": "CC",
+      "field": "Corresponding bit of DO / DI",
+      "description": "0 to 7"
+    },
+    {
+      "register": "CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "557"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CD",
+      "field": "NO / NC",
+      "description": "0: NO  (normally open )"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

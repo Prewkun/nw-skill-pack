@@ -1,0 +1,115 @@
+{
+  "code": 511,
+  "title": "Write NO / NC contact setting for a single DI/DO",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #511 to set a single DI/DO as an NO / NC contact .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "511 FF01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "DO / DI",
+      "description": "0: DO; 1: DI  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 10",
+      "field": "Corresponding bit of DO / DI",
+      "description": "0 to 7 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "11 - 12",
+      "field": "NO / NC",
+      "description": "0: NO  (normally open )",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "511 FF01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "DO / DI",
+      "description": "0: DO; 1: DI  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 10",
+      "field": "Corresponding bit of DO / DI",
+      "description": "0 to 7 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "11 - 12",
+      "field": "NO / NC",
+      "description": "0: NO  (normally open )",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Reserved",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "511 FF01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

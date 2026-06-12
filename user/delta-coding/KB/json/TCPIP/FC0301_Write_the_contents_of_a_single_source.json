@@ -1,0 +1,153 @@
+{
+  "code": 301,
+  "title": "Write the contents of a single source",
+  "protocol": "TCPIP",
+  "category": "Sources",
+  "description": "Use function code #301 to set the tightening source. A. Add a single tightening source for each tool . B. Modify the settings for an existing tightening source. First, read the settings of a single source with function code #351. Then, modify and write the settings with function code #301.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "301 2D01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Switching method ID",
+      "description": "Manual: 1",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 12",
+      "field": "Reserved",
+      "description": "4 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 220",
+      "field": "Corresponding barcode string",
+      "description": "ASCII code (100 words) ; only",
+      "example_hex": ""
+    },
+    {
+      "bytes": "221 - 222",
+      "field": "Source for",
+      "description": "the switching method  0: parameter",
+      "example_hex": ""
+    },
+    {
+      "bytes": "223 - 224",
+      "field": "Parameter / Sequence ID",
+      "description": "1 to 500  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "225 - 226",
+      "field": "Total screw quantity (L)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "1",
+      "field": "to 999999",
+      "description": "0300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "227 - 228",
+      "field": "Total screw quantity (H)",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "229 - 230",
+      "field": "Bit ID",
+      "description": "0 to 255  0000",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "301 2D01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Switching method ID",
+      "description": "Manual: 1",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 14",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "301 2D01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {
+    "1": "Switching method — ID Exceeds the range of 1 to 500",
+    "2": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "10": "Source — for the switching method Must be 0 or 1",
+    "11": "Sequence / Parameter ID — Exceeds the range of 1 to 500",
+    "12": "Total screw quantity — Exceeds the range of 1 to 999999",
+    "13": "Bit ID — Exceeds the range of 0 to 255",
+    "20": "Single screw — tightening"
+  },
+  "notes": ""
+}

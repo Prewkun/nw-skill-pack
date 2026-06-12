@@ -1,0 +1,48 @@
+{
+  "code": 563,
+  "title": "Read the function of always monitoring the current",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #563 to read whether the function of always monitoring the current is enabled .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "563"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "563"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Always monitor the current",
+      "description": "0: On"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

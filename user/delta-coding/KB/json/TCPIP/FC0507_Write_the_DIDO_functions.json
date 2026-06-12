@@ -1,0 +1,217 @@
+{
+  "code": 507,
+  "title": "Write the DI/DO functions",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #507 to set the DI/DO functions.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "507 FB01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "DO1 NO / NC",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "DO2 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "DO3 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "DO4 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "DO5 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "31 - 32",
+      "field": "DO6 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "33 - 34",
+      "field": "DO7 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "35 - 36",
+      "field": "DO8 NO / NC",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "37 - 38",
+      "field": "DO1 function",
+      "description": "0: not in use",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9",
+      "field": "to 12: reserved",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "16",
+      "field": "to 23: parameter ID output (Bit 1 - 8)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "24",
+      "field": "to 31: screw progress output (Bit",
+      "description": "1 - 8)",
+      "example_hex": ""
+    },
+    {
+      "bytes": "32",
+      "field": "to 39: sequence ID output (Bit 1 - 8)",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "40",
+      "field": "to 47: bit ID output (Bit 1 - 8) 0100",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "39 - 40",
+      "field": "DO2 function",
+      "description": "0200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "41 - 42",
+      "field": "DO3 function",
+      "description": "0300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "43 - 44",
+      "field": "DO4 function",
+      "description": "0400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "45 - 46",
+      "field": "DO5 function",
+      "description": "0500",
+      "example_hex": ""
+    },
+    {
+      "bytes": "47 - 48",
+      "field": "DO6 function",
+      "description": "0600",
+      "example_hex": ""
+    },
+    {
+      "bytes": "49 - 50",
+      "field": "DO7 function",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "51 - 52",
+      "field": "DO8 function",
+      "description": "0000",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "507 FB01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "507 FB01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

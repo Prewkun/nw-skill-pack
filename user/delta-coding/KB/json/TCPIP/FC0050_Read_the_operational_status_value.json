@@ -1,0 +1,79 @@
+{
+  "code": 50,
+  "title": "Read the operational status value",
+  "protocol": "TCPIP",
+  "category": "Operational",
+  "description": "Use function code #50 to read the operational status value with the host controller .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "50 3200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 12",
+      "field": "Reserved",
+      "description": "8 bytes …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "50 3200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 14",
+      "field": "Reserved",
+      "description": "10 bytes …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 -16",
+      "field": "Return function code",
+      "description": "50 3200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 1220",
+      "field": "Operational status",
+      "description": "Refer to the following table.  -",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": "1. 0: N.m; 1: kgf.cm ; 2: lbf.ft; 3: lbf.in 2. Bit 0: tightening in progress ; Bit 1: loosening in progress 3. 0: does not support operational status es bytes 211 - 410 and bytes 411 - 610 1: supports operational status es bytes 211 - 410 and bytes 411 - 610 4. Bit 0: clear the “All screws of current parameter finished ” flag ( bytes 42 and 92 ) Bit 1: clear the “Current parameter finished ” flag ( bytes 43 and 93 ) Bit 2: clear the “Current screw finished ” flag ( bytes 44 and 94 ) Bit 3: clear the “Curve creation finished ” flag ( bytes 51 and 101 ) Bit 4: clear the “Tightening result ” flag ( bytes 49 and 99 ) and “Loosening result ” flag ( bytes 50 and 100 ) 5. Bit 0: max. count for single screw NOK tightening Bit 1: prohibit tool operation when scanner string is null Bit 2: prohibit tool operation when screw Qty. reached Bit 3: max. operation time Bit 4: incorrect parameter sequence Bit 5: tightening operation restricted Bit 6: parameter check protection Bit 7: parameters do not match the tool 6. Bit 0: loosening prohibited after tightening OK Bit 1: loosening prohibited after tightening NOK Bit 2: max. count for single screw NOK loosening Bit 3: incorrect parameter sequence Bit 4: loosening operation restricted Bit 5: parameter range error 7. 0: remove restriction for tightening ; remove restriction for loosening 1001 : restrict tightening operation ; remove restriction for loosening 1002 : remove restriction for tightening ; restrict loosening operatio n 1003 : restrict tightening operation ; restrict loosening operation 8. 0x1001 - 0x1999: Tool 1 device alarm (AL); 0x 2000 - 0x2999: Tool 2 device alarm (AL) 0x3001 - 0x3999: Tool 1 tightening error (N G); 0x4000 - 0x4999: Tool 2 tightening error (N G) 0x5001 - 0x5999: Tool 1 operation warning (WN); 0x6000 - 0x6999: Tool 2 operation warning (WN) 9. Bit 0: clear the “Production report entry creation finished ” flag (byte 122) Bit 1: clear the “All production report entries cleared ” flag (byte 125) Bit 2: clear the “Start overwriting from production report ID 1” flag (byte 126) Bit 3: clear the “Start overwriting from error report ID 1” flag (byte 127) Bit 4: clear the “Start overwriting from warning report ID 1” flag (byte 128) Bit 5: clear the “Start overwriting from button report ID 1” flag (byte 129)"
+}

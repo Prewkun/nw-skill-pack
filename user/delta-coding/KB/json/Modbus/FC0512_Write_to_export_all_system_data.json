@@ -1,0 +1,53 @@
+{
+  "code": 512,
+  "title": "Write to export all system data",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #512 to export all system data , including contents of parameters, sequence s, sources, controller, tool, and reports .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "512"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Data storage location",
+      "description": "0: USB Disk"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "512"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

@@ -1,0 +1,43 @@
+{
+  "code": 521,
+  "title": "Write the peripheral device settings",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #521 to write the peripheral device settings .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "521"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "521"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

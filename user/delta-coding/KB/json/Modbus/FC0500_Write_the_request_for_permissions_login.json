@@ -1,0 +1,56 @@
+{
+  "code": 500,
+  "title": "Write the request for permissions login",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #500 to switch the controller permissions account through the host controller.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "500"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Permissions",
+      "description": "account  1: User 1"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "500"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Permissions — account Exceeds the range of 1 to 6",
+    "2": "Login failed — -"
+  },
+  "notes": ""
+}

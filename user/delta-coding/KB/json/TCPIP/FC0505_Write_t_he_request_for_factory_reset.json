@@ -1,0 +1,85 @@
+{
+  "code": 505,
+  "title": "Write t he request for factory reset",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #505 to write the request for factory reset.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "505 F901",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Confirm command",
+      "description": "99 6300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "505 F901",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Confirm command",
+      "description": "99 6300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "505 F901",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": "1. After factory reset, all data will be deleted and all settings will be restored to default . 2. If you use the account of the highest permissions (Admin) for factory reset, the Ethernet settings will be restored to default, and the error reports and warning reports will be cleared. 2. Check whether the writing is successful from the return status . Byte Return status Description Example (Hex) 1 - 2 Function code 505 F901 3 - 4 Return data length Unit: Word 0A00 5 - 6 Confirm command 99 6300 7 - 14 Reserved 8 bytes … 15 - 16 Return function code 505 F901 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Confirm command Must be 99 Completed Correct the written content according to the error code 1. Send request for factory reset 2. Wait for the return status OK NOK"
+}

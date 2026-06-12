@@ -1,0 +1,121 @@
+{
+  "code": 650,
+  "title": "Read the tool information",
+  "protocol": "TCPIP",
+  "category": "Tool",
+  "description": "Use function code #650 to read the tool information .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "650 8A02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "650 8A02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  2300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "650 8A02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 60",
+      "field": "Model name",
+      "description": "ASCII code (20 words)  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "61 - 62",
+      "field": "Max. speed",
+      "description": "Unit: rpm  D007",
+      "example_hex": ""
+    },
+    {
+      "bytes": "63 - 64",
+      "field": "Max. torque",
+      "description": "Unit: 0.001 Nm B004",
+      "example_hex": ""
+    },
+    {
+      "bytes": "65 - 66",
+      "field": "Tool temperature",
+      "description": "Unit: °C  2100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "67 - 68",
+      "field": "Tightening",
+      "description": "+ loosening  count (L)",
+      "example_hex": ""
+    },
+    {
+      "bytes": "69 - 70",
+      "field": "Tightening + loosening count (H)",
+      "description": "0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

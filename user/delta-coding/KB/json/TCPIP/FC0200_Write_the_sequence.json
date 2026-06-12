@@ -1,0 +1,132 @@
+{
+  "code": 200,
+  "title": "Write the sequence",
+  "protocol": "TCPIP",
+  "category": "Sequence",
+  "description": "Use function code #200 to set the tightening sequence. A. Add a tightening sequence. B. Modify an existing tightening sequence. First, read the sequence with function code #250. Then, modify and write the sequence with function code #200.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "200 C800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sequence ID",
+      "description": "1 to 500  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 60",
+      "field": "Sequence title",
+      "description": "ASCII code (20 words)  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "61 - 62",
+      "field": "General /",
+      "description": "Navigator mode  0: General mode",
+      "example_hex": ""
+    },
+    {
+      "bytes": "63 - 64",
+      "field": "Positioning arm function",
+      "description": "0: Off",
+      "example_hex": ""
+    },
+    {
+      "bytes": "65 - 80",
+      "field": "Reserved",
+      "description": "16 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "81 - 82",
+      "field": "Tool ID for Set 1",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "83 - 84",
+      "field": "Tool ID for Set 2 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "85 - 86",
+      "field": "Tool ID for Set 3 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "275 - 276",
+      "field": "Tool ID for Set 98 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "277 - 278",
+      "field": "Tool ID for Set 99 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "279 - 280",
+      "field": "Tool ID for Set 100 0000",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "281 - 282",
+      "field": "Parameter ID for Set 1 1 to 500",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "283 - 284",
+      "field": "Parameter ID for Set 2 1 to 500",
+      "description": "0200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "285 - 286",
+      "field": "Parameter ID for Set 3 1 to 500",
+      "description": "0000",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [],
+  "error_codes": {
+    "1": "Sequence ID — Exceeds the range of 1 to 500",
+    "2": "The quantity is 0 — Cannot be set as 0",
+    "3": "Total screw quantity > 999999 — Must not exceed 999999",
+    "100": "Title string is null — -",
+    "101": "Title already exists — -"
+  },
+  "notes": ""
+}

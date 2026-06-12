@@ -1,0 +1,172 @@
+{
+  "code": 508,
+  "title": "Write the DI/DO conversion table",
+  "protocol": "TCPIP",
+  "category": "Controller",
+  "description": "Use function code #508 to set the DI/DO conversion table.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "508 FC01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1",
+      "description": "/ Tool 2  0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Conversion table",
+      "description": "0: bit ID output  table",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "DEC value corresponding to",
+      "description": "ID 0",
+      "example_hex": ""
+    },
+    {
+      "bytes": "0",
+      "field": "to 255",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "DEC value corresponding to ID 1",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "DEC value corresponding to",
+      "description": "ID 2 0200",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "DEC value corresponding to",
+      "description": "ID 3 0300",
+      "example_hex": ""
+    },
+    {
+      "bytes": "29 - 30",
+      "field": "DEC value corresponding to",
+      "description": "ID 4 0400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "523 - 524",
+      "field": "DEC value corresponding to ID",
+      "description": "251 FB00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "525 - 526",
+      "field": "DEC value corresponding to ID",
+      "description": "252 FC00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "527 - 528",
+      "field": "DEC value corresponding to ID",
+      "description": "253 FD00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "529 - 530",
+      "field": "DEC value corresponding to ID",
+      "description": "254 FE00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "531 - 532",
+      "field": "DEC value corresponding to ID",
+      "description": "255 FF00",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "508 FC01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Conversion table",
+      "description": "0: bit ID output  table",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 14",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "508 FC01",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {
+    "1": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "2": "Conversion table — Must be 0, 1, 2, 4, or 6"
+  },
+  "notes": ""
+}

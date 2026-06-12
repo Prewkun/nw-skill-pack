@@ -1,0 +1,69 @@
+{
+  "code": 300,
+  "title": "Write the operati ng mode and switching method of source",
+  "protocol": "Modbus",
+  "category": "Sources",
+  "description": "Use function code #300 to switch the operati ng mode and switching method of the controller.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "300"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Operati ng mode",
+      "description": "0: single -tool"
+    },
+    {
+      "register": "CC",
+      "field": "Switching method",
+      "description": "0: manual"
+    },
+    {
+      "register": "CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "300"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Operati ng mode — Exceeds the range of 0 to 2",
+    "2": "Switching method — Exceeds the range of 0 to 2",
+    "3": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "4": "Cannot set to — dual-tool",
+    "5": "Cannot use the screw bit"
+  },
+  "notes": ""
+}

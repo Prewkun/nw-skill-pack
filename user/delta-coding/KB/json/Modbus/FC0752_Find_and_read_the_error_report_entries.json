@@ -1,0 +1,53 @@
+{
+  "code": 752,
+  "title": "Find and read the error report entries",
+  "protocol": "Modbus",
+  "category": "Reports",
+  "description": "Use function code #752 with 0x69 to read the content of the error report. Modbus (Hex) Tool 1 / Tool 2 common status R/W 69 Current No. of error report entries R",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "752"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Error report ID",
+      "description": "1 to 60000"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "752"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": "0x1001 - 0x1999: Tool 1 device alarm (AL); 0x2000 - 0x2999: Tool 2 device alarm (AL) . 0x3001 - 0x3999: Tool 1 tightening error (NG); 0x4000 - 0x4999: Tool 2 tightening error (NG) ."
+}

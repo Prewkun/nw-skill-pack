@@ -1,0 +1,43 @@
+{
+  "code": 402,
+  "title": "Write to clear all errors",
+  "protocol": "Modbus",
+  "category": "Results",
+  "description": "Use function code #402 to clear all the AL, NG, and WN alarms .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "402"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "402"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

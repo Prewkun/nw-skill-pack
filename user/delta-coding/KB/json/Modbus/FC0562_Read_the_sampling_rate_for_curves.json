@@ -1,0 +1,48 @@
+{
+  "code": 562,
+  "title": "Read the sampling rate for curves",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #562 to read the sampling rate for curves .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "562"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "562"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Sampling rate for curves",
+      "description": "0: 10 ms →2 ms when start torque is reached"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

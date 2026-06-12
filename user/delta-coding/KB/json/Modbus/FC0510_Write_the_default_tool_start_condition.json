@@ -1,0 +1,53 @@
+{
+  "code": 510,
+  "title": "Write the default tool start condition",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #510 to set the default tool start condition. Note: for example, first set the default tool start condition to “DI” with function code # 510. Then, set the DI function to “start tightening ” or “start loosening ” with function code # 507 or #511 to operate the tool through DI .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "510"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Default tool start condition",
+      "description": "0: push start"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "510"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": "for example, first set the default tool start condition to “DI” with function code # 510. Then, set the DI function to “start tightening ” or “start loosening ” with function code # 507 or #511 to operate the tool through DI . Handshake signal description: 1. Fill in the write request to 0xC8 - 0xCE. Modbus (Hex) Write / Read request Write C8 Function code 510 C9 Version number 0 CA Default tool start condition 0: push start 1: DI 2: lever start 3: push start or lever start 4: push start and lever start CB to CD Reserved - CE Request to send command 1 (to be filled in last ) 2. Check whether the writing is successful from the return status in 0xCF - 0xD1. Modbus (Hex) Return status Description CF Function code 510 D0 Status 1: OK; 2: NOK D1 Error code - If successful, the read status (0xD0) is 1. If failed, the read status ( 0xD0) is 2. The error code is as follows: Code Error description Description 1 Tool s tart condition Exceeds the range of 0 to 4 Completed Correct the written content according to the error code 1. Send request to write the default tool start condition 0xC8 - 0xCE 2. Wait for the return status 0xCF - 0xD1 OK NOK"
+}

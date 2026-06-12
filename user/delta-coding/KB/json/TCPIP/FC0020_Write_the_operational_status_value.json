@@ -1,0 +1,118 @@
+{
+  "code": 20,
+  "title": "Write the operational status value",
+  "protocol": "TCPIP",
+  "category": "Operational",
+  "description": "Use functi on code #20 to set the operation al status value with the host controller. This function is often used to clear the flag.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "20 1400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Data format",
+      "description": "1: Word",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Operational status",
+      "description": "11 - 610",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 10",
+      "field": "Operational status value (L)",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "11 - 12",
+      "field": "Operational status value (H)",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to s end command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "20 1400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Data format",
+      "description": "1: Word",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Operational status",
+      "description": "11 - 610",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 10",
+      "field": "Operational status value (L)",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "11 - 12",
+      "field": "Operational status value (H)",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Reserved",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return f unction code",
+      "description": "20 1400",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {
+    "1": "Data format — Must be 1 or 2",
+    "2": "Operational status — Exceeds 11 - 610"
+  },
+  "notes": ""
+}

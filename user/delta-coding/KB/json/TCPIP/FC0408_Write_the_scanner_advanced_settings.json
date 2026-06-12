@@ -1,0 +1,124 @@
+{
+  "code": 408,
+  "title": "Write the scanner advanced settings",
+  "protocol": "TCPIP",
+  "category": "Results",
+  "description": "Use function code #408 to set the scanner advanced settings.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "408 9801",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "Start position (char.) for saving scanner string",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "1",
+      "field": "to 200",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "End position (char.) for saving scanner string",
+      "description": "C800",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Start position (char.) for match ing scanner string",
+      "description": "0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "End position (char.) for match ing scanner string",
+      "description": "C800",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "408 9801",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2  0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "408 9801",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {
+    "1": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "2": "Scanner advanced setting value out of — range Exceeds the range of 1 to 200"
+  },
+  "notes": ""
+}

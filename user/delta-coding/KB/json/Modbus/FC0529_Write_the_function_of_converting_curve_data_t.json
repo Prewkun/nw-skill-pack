@@ -1,0 +1,53 @@
+{
+  "code": 529,
+  "title": "Write the function of converting curve data to positive values",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #529 to set the function of converting curve data to positive values .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "529"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Function of converting curve",
+      "description": ""
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "529"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

@@ -1,0 +1,56 @@
+{
+  "code": 201,
+  "title": "Write the navigator coordinates",
+  "protocol": "Modbus",
+  "category": "Sequence",
+  "description": "Use function code #201 to set the navigator coordinates of screws . Note: first, set the coordinates of screws with function code #2 01. Then, set the navigator image code s corresponding to screws with function code #20 2.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "201"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Sequence ID",
+      "description": "1 to 500"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "201"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Sequence ID — Exceeds the range of 1 to 500",
+    "2": "Axis p osition — exceed s the"
+  },
+  "notes": "first, set the coordinates of screws with function code #2 01. Then, set the navigator image code s corresponding to screws with function code #20 2. Handshake signal description: 1. Fill in the navigator coordinates of screws 0xD2 - 0x199 Completed Correct the written content according to the error code 2. Send request to write the navigator coordinates 0xC8 - 0xCE 3. Wait for the return status 0xCF - 0xD1 OK NOK 1. Fill in the navigator coordinates of up to 100 screws to 0xD2 - 0x199. Modbus (Hex) Function Description D2 Screw ID 1 - X axis position 0 - 740 D3 Screw ID 1 - Y axis position 0 - 460 D4 Screw ID 2 - X axis position 0 - 740 D5 Screw ID 2 - Y axis position 0 - 460 D6 Screw ID 3 - X axis position 0 - 740 D7 Screw ID 3 - Y axis position 0 - 460 … Screw ID N - X axis position 0 - 740 … Screw ID N - Y axis position 0 - 460 194 Screw ID 98 - X axis position 0 - 740 195 Screw ID 98 - Y axis position 0 - 460 196 Screw ID 99 - X axis position 0 - 740 197 Screw ID 99 - Y axis position 0 - 460 198 Screw ID 100 - X axis position 0 - 740 199 Screw ID 100 - Y axis position 0 - 460 2. Fill in the write request to 0xC8 - 0xCE. Modbus (Hex) Write / Read request Write C8 Function code 201 C9 Version number 0 CA Sequence ID 1 to 500 CB to CD Reserved - CE Request to send command 1 (to be filled in last ) 3. Check whether the writing is successful from the return status in 0xCF - 0xD1. Modbus (Hex) Return status Description CF Function code 201 D0 Status 1: OK; 2: NOK D1 Error code - If successful, the read status (0xD0) is 1. If failed, the read status (0xD 0) is 2. The error codes are as follows: Code Error description Description 1 Sequence ID Exceeds the range of 1 to 500 2 Axis p osition exceed s the range X axis : exceed s the range of 0 to 740 Y axis: exceed s the range of 0 to 460"
+}

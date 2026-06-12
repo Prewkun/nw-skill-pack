@@ -1,0 +1,63 @@
+{
+  "code": 751,
+  "title": "Find and read curves",
+  "protocol": "Modbus",
+  "category": "Reports",
+  "description": "Use function code #751 to read the content of the operati ng curve. A. Use with 0x6B and 0x6C to read the content of the latest curve. Modbus (Hex) Tool 1 / Tool 2 common status R/W 6B Current No. of production report entries (L) R 6C Current No. of production report entries (H) R B. Check the content of history curves. C. Set the time as X axis and the torque as Y axis to draw a torque -time coordinate graph. D. Set the angle as X axis and the torque as Y axis to draw a torque -angle coordinate graph. E. Set the angle as X axis and the torque rate as Y axis to draw a torque rate -angle coordinate graph. F. Read the parameter s content of the cur ve.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "751"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0 or 1"
+    },
+    {
+      "register": "CA",
+      "field": "Production r eport ID (L)",
+      "description": "1 to 200000"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "751"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Production r eport ID — Exceeds the range of 0 to 200000",
+    "2": "Query type — Must be 0 to 7, 10, 11, 20 to 27,",
+    "30": "to 37, or 40 to 47",
+    "898": "Torque rate — scale 6996 data (L) Torque rate scale 7996 data (L)",
+    "899": "Torque rate — scale 6996 data (H) Torque rate scale 7996 data (H)",
+    "104": "Max. torque of stage 1 — (L)",
+    "106": "Max. torque of stage 2 (L) Unit: 0.001 — x current torque unit",
+    "107": "Max. torque of stage 2 (H)",
+    "108": "Max. torque of stage 3 (L)",
+    "110": "Max. torque of loosening stage 1 — (L) Unit: 0.001 x current torque unit",
+    "111": "Max. torque of loosening stage 1 — (H)",
+    "112": "Max. torque of loosening stage 2 (L)",
+    "114": "to 11B — Reserved -",
+    "120": "Max. torque — (L) Unit: 0.001 x current torque unit 121 Max. torque (H)",
+    "122": "Min. torque — (L)",
+    "124": "Max. torque rate — (L) Unit: 0.001 x current torque rate",
+    "126": "Max. torque rate — of curve (L) Unit: 0.0001 x current torque",
+    "128": "Min. torque on the scale — (L) Unit: 0.001 x current torque unit 129 Min. torque on the scale (H)",
+    "288": "Reserved — -"
+  },
+  "notes": ""
+}

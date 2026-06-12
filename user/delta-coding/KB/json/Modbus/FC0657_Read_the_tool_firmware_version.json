@@ -1,0 +1,53 @@
+{
+  "code": 657,
+  "title": "Read the tool firmware version",
+  "protocol": "Modbus",
+  "category": "Tool",
+  "description": "Use function code #657 to read the firmware version number of the tool .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "657"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "657"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "D2 to E5",
+      "field": "Tool firmware v ersion",
+      "description": "ASCII code ( 20 words)"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

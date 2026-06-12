@@ -1,0 +1,69 @@
+{
+  "code": 302,
+  "title": "Write to switch parameter under manual setting",
+  "protocol": "Modbus",
+  "category": "Sources",
+  "description": "Use function code #302 to switch the parameter ID and screw quantity when the switching method is set to manual setting .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "302"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Parameter ID",
+      "description": "1 to 500"
+    },
+    {
+      "register": "CC",
+      "field": "Total screw quantity (L)",
+      "description": ""
+    },
+    {
+      "register": "CD",
+      "field": "Total screw quantity (H)",
+      "description": ""
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "302"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Switching method — error Must be manual setting",
+    "2": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "11": "Parameter ID — Exceeds the range of 1 to 500",
+    "12": "Total screw quantity — Exceeds the range of 1 to 999999",
+    "50": "Cannot specify the — tightening"
+  },
+  "notes": ""
+}

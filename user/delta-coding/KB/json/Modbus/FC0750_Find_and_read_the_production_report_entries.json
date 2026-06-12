@@ -1,0 +1,53 @@
+{
+  "code": 750,
+  "title": "Find and read the production report entries",
+  "protocol": "Modbus",
+  "category": "Reports",
+  "description": "Use function code #750 to read the content of the production report. A. Use with 0x6B and 0x6C to read the content of the latest production report. Modbus (Hex) Tool 1 / Tool 2 common status R/W 6B Current No. of production report entries (L) R 6C Current No. of production report entries (H) R B. Read the content of history report entries . ◼ When the version number is 0:",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "750"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Production report",
+      "description": "ID (L)  1 to 200000"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "750"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

@@ -1,0 +1,63 @@
+{
+  "code": 303,
+  "title": "Write to switch sequence under manual setting",
+  "protocol": "Modbus",
+  "category": "Sources",
+  "description": "Use function code #303 to switch the sequence ID when the switching method is set to manual setting .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "303"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Tool 1 / Tool 2",
+      "description": "0: Tool 1; 1: Tool 2"
+    },
+    {
+      "register": "CB",
+      "field": "Sequence",
+      "description": "ID 1 to 500"
+    },
+    {
+      "register": "CC, CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "303"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK; 2: NOK"
+    },
+    {
+      "register": "D1",
+      "field": "Error code",
+      "description": "-"
+    }
+  ],
+  "error_codes": {
+    "1": "Switching method — error Must be manual setting",
+    "2": "Tool 1 / Tool 2 — Must be 0 or 1",
+    "11": "Sequence — ID Exceeds the range of 1 to 500",
+    "50": "Sequence — error Must select the sequence"
+  },
+  "notes": ""
+}

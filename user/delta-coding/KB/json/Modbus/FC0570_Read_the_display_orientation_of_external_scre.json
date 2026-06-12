@@ -1,0 +1,48 @@
+{
+  "code": 570,
+  "title": "Read the display orientation of external screen",
+  "protocol": "Modbus",
+  "category": "Controller",
+  "description": "Use function code #570 to read the display orientation of external screen (HDMI) .",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "570"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last)"
+    }
+  ],
+  "return_fields": [
+    {
+      "register": "CF",
+      "field": "Function code",
+      "description": "570"
+    },
+    {
+      "register": "D0",
+      "field": "Status",
+      "description": "1: OK"
+    },
+    {
+      "register": "CA",
+      "field": "Display orientation",
+      "description": "0: portrait"
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

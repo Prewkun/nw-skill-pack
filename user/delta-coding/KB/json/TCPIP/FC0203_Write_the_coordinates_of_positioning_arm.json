@@ -1,0 +1,115 @@
+{
+  "code": 203,
+  "title": "Write the coordinates of positioning arm",
+  "protocol": "TCPIP",
+  "category": "Sequence",
+  "description": "Use function code #203 to set the coordinates of positioning arm . Note: first, set the tightening sequence with function code #200. Then, set the coordinates of positioning arm with function code #20 3.",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "203 CB00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "- 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Seque nce ID 1 to 500 0100",
+      "description": "",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 12",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 20",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "21 - 22",
+      "field": "Screw ID 1 - positioning arm X axis",
+      "description": "position  (L)",
+      "example_hex": ""
+    },
+    {
+      "bytes": "23 - 24",
+      "field": "Screw ID 1 - positioning arm X axis",
+      "description": "position  (H) 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "25 - 26",
+      "field": "Screw ID 1 - positioning arm Y axis",
+      "description": "position  (L)",
+      "example_hex": ""
+    },
+    {
+      "bytes": "27 - 28",
+      "field": "Screw ID 1 - positioning arm Y axis",
+      "description": "position  (H) 0000",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "203 CB00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  0A00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Sequence ID",
+      "description": "1 to 500 0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 14",
+      "field": "Reserved",
+      "description": "8 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "203 CB00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    },
+    {
+      "bytes": "19 - 20",
+      "field": "Error code",
+      "description": "- 0000",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": "first, set the tightening sequence with function code #200. Then, set the coordinates of positioning arm with function code #20 3. Handshake signal description: 1. Send the request to write the coordinates of positioning arm for up to 100 screws . Byte Write / Read request Description Example (Hex) 1 - 2 Function code 203 CB00 3 - 4 Version number - 0000 5 - 6 Seque nce ID 1 to 500 0100 7 - 12 Reserved 6 bytes … 13 - 14 Request to send command - 0100 15 - 20 Reserved 6 bytes … 21 - 22 Screw ID 1 - positioning arm X axis position (L) Unit: mm E803 23 - 24 Screw ID 1 - positioning arm X axis position (H) 0000 25 - 26 Screw ID 1 - positioning arm Y axis position (L) Unit: mm 0000 27 - 28 Screw ID 1 - positioning arm Y axis position (H) 0000 Completed Correct the written content according to the error code 1. Send request to write the coordinates of positioning arm 2. Wait for the return status OK NOK Byte Write / Read request Description Example (Hex) 29 - 30 Screw ID 1 - positioning arm Z axis position (L) Unit: mm E803 31 - 32 Screw ID 1 - positioning arm Z axis position (H) 0000 33 - 34 Screw ID 2 - positioning arm X axis position (L) Unit: mm 0000 35 - 36 Screw ID 2 - positioning arm X axis position (H) 0000 37 - 38 Screw ID 2 - positioning arm Y axis position (L) Unit: mm 0000 39 - 40 Screw ID 2 - positioning arm Y axis position (H) 0000 41 - 42 Screw ID 2 - positioning arm Z axis position (L) Unit: mm 0000 43 - 44 Screw ID 2 - positioning arm Z axis position (H) 0000 45 - 46 Screw ID 3 - positioning arm X axis position (L) Unit: mm 0000 47 - 48 Screw ID 3 - positioning arm X axis position (H) 0000 49 - 50 Screw ID 3 - positioning arm Y axis position (L) Unit: mm 0000 51 - 52 Screw ID 3 - positioning arm Y axis position (H) 0000 53 - 54 Screw ID 3 - positioning arm Z axis position (L) Unit: mm 0000 55 - 56 Screw ID 3 - positioning arm Z axis position (H) 0000 … Screw ID N - positioning arm X axis position (L) Unit: mm 0000 … Screw ID N - positioning arm X axis position (H) 0000 … Screw ID N - positioning arm Y axis position (L) Unit: mm 0000 … Screw ID N - positioning arm Y axis position (H) 0000 … Screw ID N - positioning arm Z axis position (L) Unit: mm 0000 … Screw ID N - positioning arm Z axis position (H) 0000 1185 - 1186 Screw ID 98 - positioning arm X axis position (L) Unit: mm 0000 1187 - 1188 Screw ID 98 - positioning arm X axis position (H) 0000 1189 - 1190 Screw ID 98 - positioning arm Y axis position (L) Unit: mm 0000 1191 - 1192 Screw ID 98 - positioning arm Y axis position (H) 0000 1193 - 1194 Screw ID 98 - positioning arm Z axis position (L) Unit: mm 0000 1195 - 1196 Screw ID 98 - positioning arm Z axis position (H) 0000 1197 - 1198 Screw ID 99 - positioning arm X axis position (L) Unit: mm 0000 1199 - 1200 Screw ID 99 - positioning arm X axis position (H) 0000 1201 - 1202 Screw ID 99 - positioning arm Y axis position (L) Unit: mm 0000 1203 - 1204 Screw ID 99 - positioning arm Y axis position (H) 0000 1205 - 1206 Screw ID 99 - positioning arm Z axis position (L) Unit: mm 0000 1207 - 1208 Screw ID 99 - positioning arm Z axis position (H) 0000 1209 - 1210 Screw ID 100 - positioning arm X axis position (L) Unit: mm 0000 1211 - 1212 Screw ID 100 - positioning arm X axis position (H) 0000 1213 - 1214 Screw ID 100 - positioning arm Y axis position (L) Unit: mm 0000 1215 - 1216 Screw ID 100 - positioning arm Y axis position (H) 0000 1217 - 1218 Screw ID 100 - positioning arm Z axis position (L) Unit: mm 0000 1219 - 1220 Screw ID 100 - positioning arm Z axis position (H) 0000 2. Check whether the writing is successful from the return status. Byte Return status Description Example (Hex) 1 - 2 Function code 203 CB00 3 - 4 Return data length Unit: Word 0A00 5 - 6 Sequence ID 1 to 500 0100 7 - 14 Reserved 8 bytes … 15 - 16 Return function code 203 CB00 17 - 18 Status 1: OK; 2: NOK 0100 19 - 20 Error code - 0000 If successful, the read status is 1. If failed, the read status is 2. The error code is as follows: Code Error description Description 1 Sequence ID Exceeds the range of 1 to 500"
+}

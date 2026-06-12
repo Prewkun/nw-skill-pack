@@ -1,0 +1,91 @@
+{
+  "code": 750,
+  "title": "Find and read the production report entries",
+  "protocol": "TCPIP",
+  "category": "Reports",
+  "description": "Use function code #750 to read the content of the production report. A. Use with bytes 235 - 236 and bytes 237 - 238 to read the content of the latest production report. Byte Tool 1 / Tool 2 common status 235 - 236 Current No. of production report entries (L) 237 - 238 Current No. of production report entries (H) B. Read the content of history report entries .",
+  "request_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "750 EE02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Version number",
+      "description": "0 or 1 0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Production report ID (L)",
+      "description": "1 to 200000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Production report ID (H)",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 12",
+      "field": "Reserved",
+      "description": "4 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "13 - 14",
+      "field": "Request to send command",
+      "description": "- 0100",
+      "example_hex": ""
+    }
+  ],
+  "return_fields": [
+    {
+      "bytes": "1 - 2",
+      "field": "Function code",
+      "description": "750 EE02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "3 - 4",
+      "field": "Return data length",
+      "description": "Unit: Word  CB00",
+      "example_hex": ""
+    },
+    {
+      "bytes": "5 - 6",
+      "field": "Production report ID (L)",
+      "description": "1 to 200000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "7 - 8",
+      "field": "Production report ID (H)",
+      "description": "0000",
+      "example_hex": ""
+    },
+    {
+      "bytes": "9 - 14",
+      "field": "Reserved",
+      "description": "6 bytes  …",
+      "example_hex": ""
+    },
+    {
+      "bytes": "15 - 16",
+      "field": "Return function code",
+      "description": "750 EE02",
+      "example_hex": ""
+    },
+    {
+      "bytes": "17 - 18",
+      "field": "Status",
+      "description": "1: OK; 2: NOK  0100",
+      "example_hex": ""
+    }
+  ],
+  "error_codes": {},
+  "notes": ""
+}

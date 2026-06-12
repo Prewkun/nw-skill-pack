@@ -1,0 +1,37 @@
+{
+  "code": 203,
+  "title": "Write the coordinates of positioning arm",
+  "protocol": "Modbus",
+  "category": "Sequence",
+  "description": "Use function code #203 to set the coordinates of positioning arm . Note: first, set the tightening sequence with function code #200. Then, set the coordinates of positioning arm with function code #20 3.",
+  "request_fields": [
+    {
+      "register": "C8",
+      "field": "Function code",
+      "description": "203"
+    },
+    {
+      "register": "C9",
+      "field": "Version number",
+      "description": "0"
+    },
+    {
+      "register": "CA",
+      "field": "Sequence ID",
+      "description": "1 to 500"
+    },
+    {
+      "register": "CB to CD",
+      "field": "Reserved",
+      "description": "-"
+    },
+    {
+      "register": "CE",
+      "field": "Request to send command",
+      "description": "1 (to be filled in last )"
+    }
+  ],
+  "return_fields": [],
+  "error_codes": {},
+  "notes": "first, set the tightening sequence with function code #200. Then, set the coordinates of positioning arm with function code #20 3. Handshake signal description: 1. Fill in the coordinates of positioning arm for up to 100 screws to 0xD2 - 0x329. Modbus (Hex) Function Description D2 Screw ID 1 - positioning arm X axis position (L) Unit: mm D3 Screw ID 1 - positioning arm X axis position (H) D4 Screw ID 1 - positioning arm Y axis position (L) Unit: mm D5 Screw ID 1 - positioning arm Y axis position (H) D6 Screw ID 1 - positioning arm Z axis position (L) Unit: mm D7 Screw ID 1 - positioning arm Z axis position (H) D8 Screw ID 2 - positioning arm X axis position (L) Unit: mm D9 Screw ID 2 - positioning arm X axis position (H) DA Screw ID 2 - positioning arm Y axis position (L) Unit: mm DB Screw ID 2 - positioning arm Y axis position (H) DC Screw ID 2 - positioning arm Z axis position (L) Unit: mm DD Screw ID 2 - positioning arm Z axis position (H) DE Screw ID 3 - positioning arm X axis position (L) Unit: mm DF Screw ID 3 - positioning arm X axis position (H) E0 Screw ID 3 - positioning arm Y axis position (L) Unit: mm E1 Screw ID 3 - positioning arm Y axis position (H) E2 Screw ID 3 - positioning arm Z axis position (L) Unit: mm E3 Screw ID 3 - positioning arm Z axis position (H) 1. Fill in the coordinates of positioning arm 0xD2 - 0x329 Completed Correct the written content according to the error code 2. Send request to write the coordinates of positioning arm 0xC8 - 0xCE 3. Wait for the return status 0xCF - 0xD1 OK NOK Modbus (Hex) Function Description … Screw ID N - positioning arm X axis position (L) Unit: mm … Screw ID N - positioning arm X axis position (H) … Screw ID N - positioning arm Y axis position (L) Unit: mm … Screw ID N - positioning arm Y axis position (H) … Screw ID N - positioning arm Z axis position (L) Unit: mm … Screw ID N - positioning arm Z axis position (H) 318 Screw ID 98 - positioning arm X axis position (L) Unit: mm 319 Screw ID 98 - positioning arm X axis position (H) 31A Screw ID 98 - positioning arm Y axis position (L) Unit: mm 31B Screw ID 98 - positioning arm Y axis position (H) 31C Screw ID 98 - positioning arm Z axis position (L) Unit: mm 31D Screw ID 98 - positioning arm Z axis position (H) 31E Screw ID 99 - positioning arm X axis position (L) Unit: mm 31F Screw ID 99 - positioning arm X axis position (H) 320 Screw ID 99 - positioning arm Y axis position (L) Unit: mm 321 Screw ID 99 - positioning arm Y axis position (H) 322 Screw ID 99 - positioning arm Z axis position (L) Unit: mm 323 Screw ID 99 - positioning arm Z axis position (H) 324 Screw ID 100 - positioning arm X axis position (L) Unit: mm 325 Screw ID 100 - positioning arm X axis position (H) 326 Screw ID 100 - positioning arm Y axis position (L) Unit: mm 327 Screw ID 100 - positioning arm Y axis position (H) 328 Screw ID 100 - positioning arm Z axis position (L) Unit: mm 329 Screw ID 100 - positioning arm Z axis position (H) 2. Fill in the write request to 0xC8 - 0xCE. Modbus (Hex) Write / Read request Write C8 Function code 203 C9 Version number 0 CA Sequence ID 1 to 500 CB to CD Reserved - CE Request to send command 1 (to be filled in last ) 3. Check whether the writing is successful from the return status in 0xCF - 0xD1. Modbus (Hex) Return status Description CF Function code 203 D0 Status 1: OK; 2: NOK D1 Error code - If successful, the read status (0xD0) is 1. If failed, the read status (0xD 0) is 2. The error code is as follows: Code Error description Description 1 Sequence ID Exceeds the range of 1 to 500"
+}
