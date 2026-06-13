@@ -72,27 +72,37 @@ Filename and header must carry the full identifier:
 See `reference/example-form.md` for full layout.
 
 ## Named styles — primary formatting path
-The house template defines these styles. Apply them by name rather than setting per-run font/size.
+The house template defines these styles (verified against `templates/AYS-RoHS.docx`). Apply them by name rather than setting per-run font/size. Several styles get their font/size by **inheritance** via `basedOn` — the values below are the effective (resolved) values.
 
-| Style | Use for | Latin font | CS font | pt | Color |
-|---|---|---|---|---|---|
-| `Heading1` | H1 section titles | Arial | **AngsanaUPC** | **14pt (sz 28)** | auto |
-| `Heading2` | H2 subsections | Arial | **AngsanaUPC** | **12pt (sz 24)** | auto |
-| `Heading3`, `Heading4` | deeper sub-levels | (inherit) | (inherit) | (inherit) | auto |
-| `Normal` | body default | Arial | Arial | (default) | auto |
-| `ThaiTranslate` | Thai sibling paragraphs | Arial | **AngsanaUPC** | 12pt (sz 24) | **`#0000FF`** |
-| `ThaiTranslateChar` | inline Thai char style | — | AngsanaUPC | — | blue |
-| `Table` | table header cells, shaded `CCCCCC` | — | — | — | — |
-| `Text` | table body cells | — | — | — | — |
+| Style | Use for | Latin font | CS font | sz / szCs | Color | Notes |
+|---|---|---|---|---|---|---|
+| `Heading1` | H1 section titles | Arial | **AngsanaUPC** | 28 / 28 (14pt) | auto | source of the CS font + szCs for the whole chain |
+| `Heading2` | H2 subsections | Arial | AngsanaUPC | 24 / 28 (12/14pt) | auto | `basedOn Heading1` |
+| `Heading3`, `Heading4` | deeper sub-levels | (inherit) | (inherit) | (inherit) | auto | |
+| `Normal` | body default | Arial | Arial | (default) | auto | |
+| `ThaiTranslate` | Thai sibling paragraphs | Arial | AngsanaUPC | 24 / 28 (12/14pt) | **`#0000FF`** | `basedOn Heading2`; its **own** rPr only adds blue. Also strips numbering (`numId=0`) and indents left 1080 |
+| `ThaiTranslateChar` | linked char style of `ThaiTranslate` | Arial | AngsanaUPC | 24 / 28 | blue | applied automatically with the paragraph style — do **not** apply it separately |
+| `Table` | table **header**-cell text | (inherit) | ⚠ Angsana New | 24 (12pt) | auto | `basedOn Text`; adds **bold + centered** only — NOT the shading |
+| `Text` | table **body**-cell text | Arial | ⚠ Angsana New | 24 (12pt) | auto | `basedOn Normal` |
 
-**Correct font:** **AngsanaUPC** (NOT "Angsana New") for all Thai / complex-script runs.
+`Table` and `Text` are **paragraph** styles for the *text inside* cells — not table styles (the doc also has `TableGrid`/`Table10` for that).
+
+**`ThaiTranslate` is sufficient on its own.** Applying the paragraph style gives AngsanaUPC (CS), szCs 28 (14pt Thai), and blue through the `basedOn Heading2 → Heading1` chain, and de-numbers + indents the line. Don't also apply `ThaiTranslateChar` or hand-set the font.
+
+**Header-cell shading (`CCCCCC`) is NOT in the `Table` style** — apply it as direct cell shading (`<w:tcPr><w:shd w:fill="CCCCCC"/>`) to header cells. The `Table` style only makes the text bold + centered.
+
+**Font:** **AngsanaUPC** (NOT "Angsana New") for all Thai / complex-script runs.
+⚠ **Known template quirk:** the `Text`/`Table` styles currently inherit **Angsana New** for the CS font. We standardize on **AngsanaUPC** — so when placing Thai in table cells, override the cell run's CS font to AngsanaUPC (or apply `ThaiTranslate`). The templates' `Text` style should be updated to AngsanaUPC in a future revision.
+
 **Heading sizes:** H1 = 14pt (sz 28), H2 = 12pt (sz 24) — NOT H1 24pt / H2 18pt.
+
+**Embedded fonts:** the templates embed the fonts (`word/fonts/*.odttf`). When copying a template, preserve them so AngsanaUPC/Angsana New travel with the file.
 
 Apply styles via Office JS:
 ```js
 para.style = "Heading1";        // H1 section titles
-para.style = "ThaiTranslate";   // Thai sibling paragraphs
-cell.paragraphs.getFirst().style = "Table"; // table header cells
+para.style = "ThaiTranslate";   // Thai sibling paragraphs (font+size+blue all inherited)
+cell.paragraphs.getFirst().style = "Table"; // header-cell text (then set CCCCCC shading on the cell)
 ```
 
 Because each style sets Arial for Latin and AngsanaUPC for complex-script, embedded English inside a Thai line auto-renders correctly in Arial — no per-token embedded-Latin restyle loop needed when styles are applied.
@@ -138,8 +148,7 @@ const ok = /w:szCs/.test(xml.value) && !/<w:cs\/>/.test(xml.value);
 ```
 
 ## Tables
-House styles: `Table` (header cells, shaded `CCCCCC`) and `Text` (body cells). NOT "TableGrid".
-Flat only — never nest tables inside cells. PM matrix layout: `reference/example-form.md`.
+Apply the `Table` paragraph style to header-cell text (bold + centered) and `Text` to body-cell text — these style the *text*, not the table grid. Apply the `CCCCCC` header shading directly to the header cells (it is not part of the `Table` style). Ensure Thai in cells uses AngsanaUPC (override the `Text` style's inherited Angsana New CS font). Flat only — never nest tables inside cells. PM matrix layout: `reference/example-form.md`.
 
 ## Environment fallback
 If `execute_office_js`/`verify_doc_visual` are unavailable, fall back to the `docx` skill's OOXML path — the same pkg wrappers and AngsanaUPC font apply when writing `document.xml` directly.
@@ -155,7 +164,8 @@ If `execute_office_js`/`verify_doc_visual` are unavailable, fall back to the `do
 
 ## Verification gate (HARD — do not deliver until all pass)
 - [ ] House styles applied: `Heading1–4`, `ThaiTranslate`, `Table`/`Text`.
-- [ ] Font is **AngsanaUPC** (cs) everywhere Thai is used; color `#0000FF`; `szCs` present; `<w:cs/>` absent.
+- [ ] Font is **AngsanaUPC** (cs) everywhere Thai is used — including table cells (override the `Text` style's inherited Angsana New); color `#0000FF`; `szCs` present; `<w:cs/>` absent.
+- [ ] Header-cell shading `CCCCCC` applied directly to header cells (not relied on from the `Table` style).
 - [ ] Thai siblings present on Safety + Procedure steps + Definitions labels + Appendices; absent from Purpose/Scope/Reference/Equipment/Workflow/Revision History.
 - [ ] Acronyms/identifiers untranslated (PFS, AOI, HMI, PN, SN, IPA, RoHS, ESD…).
 - [ ] Filename + header carry `AYS/AYF<cust>-<7digits>-Rev<X>`.
