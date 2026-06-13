@@ -1,111 +1,151 @@
 ---
 name: sop-write
-description: Write a bilingual (English + Thai) SOP / work instruction / how-to guide matching the house template — H1/H2 Arial headings, paired English/Thai paragraphs, a capability or procedure table, numbered steps, safety block, and troubleshooting. Covers software SOPs, machine operating procedures, maintenance/PM procedures, changeover instructions, and safety procedures. Use when the user asks to draft an SOP, work instruction, operating procedure, PM procedure, user guide, quick-start, or any bilingual (EN/TH) procedure document in this format.
+description: Write a bilingual (English + Thai) SOP or PM form matching the Benchmark Electronics (BEI-Thailand) house template. Two real doc types: AYS (SOP) with 8 fixed sections + Revision History, and AYF (PM check-sheet) in landscape with a PM matrix table. Named styles (Heading1–4, ThaiTranslate, Table, Text) are the primary formatting path. Use when asked to draft an SOP, work instruction, operating procedure, PM form, or any bilingual (EN/TH) procedure document in the BEI-Thailand / Agile PLM format.
 ---
 
-Write a bilingual English + Thai SOP / procedure that matches the house template. English appears first; its Thai translation is the immediately-following separate paragraph.
+Write a bilingual English + Thai SOP or PM form matching the Benchmark Electronics (BEI-Thailand) house template. Named Word styles are the primary formatting path — apply them first; reach for raw OOXML only as a fallback.
 
 ## When to use
-- Draft an SOP, work instruction (WI), operating procedure, PM/maintenance procedure, changeover guide, how-to, user guide, or quick-start.
-- A bilingual (EN/TH) guide, or "the SOP template" / "the same format".
+- Draft an SOP (AYS), work instruction, or operating procedure for BEI-Thailand.
+- Draft a PM form / preventive maintenance check-sheet (AYF).
+- Update an existing SOP to a new revision.
+- "The SOP template", "the same format", or any bilingual (EN/TH) procedure in the house style.
 
-## Phase 0 — Intake (do this before writing)
-Establish, from the user's input or by asking max 3 questions:
-1. **SOP type** → `software` | `machine-operation` | `maintenance-pm` | `changeover` | `safety`. This selects the section preset below.
-2. **Source** → uploaded doc / notes / screenshots / verbal. Read it first (use `file-reading` skill if a file path is given and content isn't in context). Never invent a procedure.
-3. **Actor + trigger** → who performs it (operator / technician / engineer) and what starts it.
+## Phase 0 — Intake
+Establish from input or by asking at most 4 questions:
+1. **Doc type** → `AYS` (SOP) | `AYF` (PM form).
+2. **Identity** → customer code (e.g. `EMP`), 7-digit document number, revision letter (A, B, …), and title.
+3. **Source material** → uploaded doc / notes / verbal. Never invent procedure content — if missing, ask.
+4. **Revision update?** → if yes, ask which sections changed and what the Agile ECO number is.
 
-If source material is missing and the procedure can't be inferred, ask — do not write blind.
+## Document identity (all docs)
+Filename and header must carry the full identifier:
 
-## Common structure (all types)
-1. **H1 title** — guide/procedure name.
-2. **Overview paragraph** — 1–2 sentences: what it is, what it does.
-3. **[Type-specific middle section — see presets]**
-4. **H2 "Troubleshooting"** — symptom → fix pairs.
-5. **H2 "Need more help?"** — support pointer.
+| Field | Format | Example |
+|---|---|---|
+| SOP filename | `AYS<cust>-<7digits>-Rev<X>.docx` | `AYSEMP-0051797-RevB.docx` |
+| Form filename | `AYF<cust>-<7digits>-Rev<X>.docx` | `AYFEMP-0051798-RevA.docx` |
+| `core.xml` `cp:category` | `SOP` or `form` | `SOP` |
+| `core.xml` `cp:subject` | `Product Engineering` | |
+| Header | RoHS logo (green `#99CC00`) + doc-control fields | |
 
-Every English heading / paragraph / list item is followed by a **separate paragraph** with its Thai translation.
+## AYS — SOP structure (fixed 8-section order)
 
-## Section presets by type
-**software**
-- H2 "What can [X] do?" + Capability table (Capability / What to ask / Example)
-- H2 "Quick-start steps" (numbered)
-- H2 "What's New" (optional)
+| # | Section | Bilingual? | Notes |
+|---|---|---|---|
+| 1 | **Purpose** | English only | What the machine/process does |
+| 2 | **Scope** | English only | Sites; Required Training (Operator/Technician) |
+| 3 | **Reference Documents and Forms** | English only | Cross-ref other AYS/AYF numbers |
+| 4 | **Equipment** | English only | Machine list, tools, materials |
+| 5 | **Safety** | **EN + Thai sibling** | EN statement then `ThaiTranslate` paragraph |
+| 6 | **Definitions** | EN labels + Thai callout labels | Machine overview, control box, indicators (image-heavy) |
+| 7 | **Workflow** | English only | May be "N/A" |
+| 8 | **Procedure** | **EN + Thai sibling per step** | Numbered `Heading2`/`Heading3` substeps |
+| — | **Appendices** | English only | e.g. "None." |
+| — | **Revision History** | English only | 3-column table: Rev / Description of Change / Approved By |
 
-**machine-operation**
-- H2 "Purpose & Scope"
-- **H2 "Safety" (mandatory — see Safety block)**
-- H2 "Prerequisites" (machine state, materials, tools)
-- H2 "Procedure" (numbered steps)
-- H2 "Acceptance criteria" (how to confirm done/good)
+**Bilingual rule:** Thai siblings (`ThaiTranslate` paragraphs) appear **only** on Safety statements, Procedure steps, and Definitions labels. Purpose, Scope, Reference, Equipment, Workflow, and Appendices are English-only. Do NOT add Thai siblings everywhere.
 
-**maintenance-pm**
-- H2 "Frequency" (daily/weekly/monthly/by cycle count)
-- **H2 "Safety / Lockout-Tagout" (mandatory)**
-- H2 "Tools & spare parts" (table)
-- H2 "Steps" (numbered)
-- H2 "Sign-off" (date / tech / result row)
+## AYF — PM Form structure (landscape)
+- **Orientation:** landscape.
+- **Top blanks:** `MACHINE ID` / `MACHINE NAME` / `MODEL` / `SERIAL NO`.
+- **Title:** PREVENTIVE MAINTENANCE INSTRUCTIONS.
+- **PM matrix table:** numbered columns 1–13 (= occurrence/month), rows grouped by interval (`MONTHLY`, `SEMI-ANNUAL`), each row: `Area | Item | Execution`.
+- **Sign-off row:** `Checked By | Date | Inspected by` — "Tick after completing the items."
+- **Preventive maintenance action record** (separate table): `Date | Problem Description | Action | By`.
 
-**changeover**
-- **H2 "Safety" (mandatory)**
-- H2 "From → To" (product/config table)
-- H2 "Procedure" (numbered, with SMED internal/external tags if relevant)
-- H2 "Acceptance criteria"
+See `reference/example-form.md` for full layout.
 
-**safety**
-- H2 "Hazards"
-- H2 "Required PPE" (table)
-- H2 "Procedure"
-- H2 "In case of incident"
+## Named styles — primary formatting path
+The house template defines these styles. Apply them by name rather than setting per-run font/size.
 
-## Safety block (mandatory for non-software types)
-A highlighted callout near the top: hazard summary, required PPE, and LOTO note where energy is present. Paired EN/TH. Style: shaded paragraph (light fill `#FFF2CC`), bold EN label "⚠ Safety", Thai sibling below. Keep warnings imperative and short.
+| Style | Use for | Latin font | CS font | pt | Color |
+|---|---|---|---|---|---|
+| `Heading1` | H1 section titles | Arial | **AngsanaUPC** | **14pt (sz 28)** | auto |
+| `Heading2` | H2 subsections | Arial | **AngsanaUPC** | **12pt (sz 24)** | auto |
+| `Heading3`, `Heading4` | deeper sub-levels | (inherit) | (inherit) | (inherit) | auto |
+| `Normal` | body default | Arial | Arial | (default) | auto |
+| `ThaiTranslate` | Thai sibling paragraphs | Arial | **AngsanaUPC** | 12pt (sz 24) | **`#0000FF`** |
+| `ThaiTranslateChar` | inline Thai char style | — | AngsanaUPC | — | blue |
+| `Table` | table header cells, shaded `CCCCCC` | — | — | — | — |
+| `Text` | table body cells | — | — | — | — |
 
-## Formatting rules (apply explicitly per paragraph — do not rely on Normal style)
-**English / Latin / digits:** Arial, color #000000.
-- H1 24pt · H2 18pt · body & table & list 12pt.
+**Correct font:** **AngsanaUPC** (NOT "Angsana New") for all Thai / complex-script runs.
+**Heading sizes:** H1 = 14pt (sz 28), H2 = 12pt (sz 24) — NOT H1 24pt / H2 18pt.
 
-**Thai:** Angsana New, 14pt, color #0000FF (blue) — everywhere, including table cells.
+Apply styles via Office JS:
+```js
+para.style = "Heading1";        // H1 section titles
+para.style = "ThaiTranslate";   // Thai sibling paragraphs
+cell.paragraphs.getFirst().style = "Table"; // table header cells
+```
 
-**Latin/digits embedded in a Thai paragraph** (e.g. "Claude", "PLC", "24V", a model no.): restyle just those chars to Arial 12pt; leave surrounding Thai as Angsana New 14pt blue. Find with `thPara.search(token,{matchCase:true})` per `text.match(/[A-Za-z0-9]+/g)` token, then `.font.name="Arial"; .font.size=12`.
-- **Terminology policy:** technical acronyms and identifiers (PLC, HMI, FAT, SAT, BOM, FMEA, LOTO, part/model numbers) stay English — do NOT translate them; only translate descriptive prose around them. Reuse the domain glossary for consistent TH wording.
+Because each style sets Arial for Latin and AngsanaUPC for complex-script, embedded English inside a Thai line auto-renders correctly in Arial — no per-token embedded-Latin restyle loop needed when styles are applied.
 
-**Lists:** numbered → "List Number"; bullets → "List Bullet".
+## Terminology policy
+Technical acronyms and identifiers stay English — do NOT translate them:
+`PLC, HMI, PFS, AOI, SN, PN, IPA, MPa, RoHS, ESD, EMO, LOTO, BOM, FMEA, ECO, PLM, TLA, PCB, SMT`
+Only translate descriptive prose around them. Reuse `reference/glossary.md` for consistent Thai term mapping.
 
-## Critical: Thai font sizing (szCs)
-`font.size` writes only `<w:sz>`, never `<w:szCs>`. Thai glyphs are sized by `szCs` when a run carries `<w:cs/>` — so Thai renders too small (~12pt) even with `sz=28`.
+## Revision History table
+Always the last body element. 3 columns: **Rev | Description of Change | Approved By**.
 
-**Fix:** replace each Thai run's content via a content-scoped OOXML insert with a full pkg wrapper containing BOTH `<w:sz w:val="28"/><w:szCs w:val="28"/>` and NO `<w:cs/>` flag. Use a content-scoped range (`thPara.getRange("Content")` or `cell.body.search(thaiText)`), NOT paragraph/table range — those re-nest a table or throw GeneralException.
+```
+| Rev | Description of Change               | Approved By         |
+|-----|-------------------------------------|---------------------|
+| A   | New release.                        | Agile ECO TE0236664 |
+| B   | - Rename title "CHARMS TLA…"→"TLA…" | Agile ECO TExxxxxxx |
+|     | - Add 8.2 PFS TESTLINK detail        |                     |
+|     | - Add 8.3 AOI Program Selector       |                     |
+```
 
-Snippets: see `reference/ooxml-snippets.md` (TH heading / TH body / TH table cell pkg wrappers — copy, don't re-derive).
+**Rev-update workflow** (e.g. Rev A → Rev B):
+1. Bump filename `RevA` → `RevB`.
+2. Update title in body **and** header if renamed.
+3. Add/modify the changed numbered subsections.
+4. Append one Revision History row; list each change **by section number**.
+5. Cite the **Agile ECO** number in "Approved By".
+6. Update `core.xml` modified date.
 
-**Done when:** every Thai run reads back with `szCs` present and `<w:cs/>` absent — verify via `getOoxml()` and `/w:szCs/.test(xml) && !/<w:cs\/>/.test(xml)`.
+## Fallback OOXML path (only when named styles are unavailable)
+Use raw OOXML pkg-injection only when the house template styles are absent from the target document.
 
-## Capability / procedure tables
-Flat (NOT nested) table, "TableGrid" style, `headerRowCount = 1`. Each cell = 2 paragraphs: English (Arial 12 black) top, Thai (Angsana New 14 blue) below.
+**Thai run sizing problem:** `font.size` writes only `<w:sz>`, not `<w:szCs>`. Thai glyphs need both.
+**Fix:** insert content-scoped OOXML with `<w:sz w:val="28"/>` AND `<w:szCs w:val="28"/>`, NO `<w:cs/>`.
+Use `thPara.getRange("Content").insertOoxml(pkg, "Replace")`, NOT paragraph/table range.
 
-Build with `carrier.insertTable(rows, cols, "After", values)` for English, then add the Thai paragraph per cell and apply the szCs fix. **Never** build nested 1×1 tables inside cells — original defect. After building, verify every cell has exactly 2 paragraphs and 0 nested tables (`cell.body.tables.items.length === 0`).
+Fallback font: **AngsanaUPC** (not Angsana New). Snippets: `reference/ooxml-snippets.md`.
+
+Verify each Thai run after insert:
+```js
+const xml = thPara.getOoxml(); await ctx.sync();
+const ok = /w:szCs/.test(xml.value) && !/<w:cs\/>/.test(xml.value);
+```
+
+## Tables
+House styles: `Table` (header cells, shaded `CCCCCC`) and `Text` (body cells). NOT "TableGrid".
+Flat only — never nest tables inside cells. PM matrix layout: `reference/example-form.md`.
 
 ## Environment fallback
-If the Word add-in (`execute_office_js`, `verify_doc_visual`) is unavailable, fall back to the `docx` skill's OOXML path — the same pkg wrappers and szCs rule apply when writing `document.xml` directly.
+If `execute_office_js`/`verify_doc_visual` are unavailable, fall back to the `docx` skill's OOXML path — the same pkg wrappers and AngsanaUPC font apply when writing `document.xml` directly.
 
-## Build order (one execute_office_js call per section for visible progress)
-1. Title + overview (EN + TH).
-2. Safety block (non-software types).
-3. Type-specific middle section + table.
-4. Numbered steps (EN + TH per step).
-5. Troubleshooting / Need more help.
-6. Thai szCs sweep + embedded-Latin restyle.
+## Build order (one execute_office_js call per section)
+1. Set filename; write `core.xml` identity fields.
+2. Header (RoHS logo + doc-control fields).
+3. Body sections in fixed order (AYS: 1–8 + Appendices + Revision History; AYF: blanks + PM matrix + sign-off + action record).
+4. Apply named styles to all paragraphs.
+5. Add `ThaiTranslate` siblings for Safety + Procedure steps (AYS only; AYF is English-only).
+6. Fallback szCs sweep only if named styles were unavailable.
 7. Verification gate.
 
 ## Verification gate (HARD — do not deliver until all pass)
-Run and confirm each; on any fail, fix and re-run:
-- [ ] Every EN heading/para/list-item has a TH sibling paragraph directly after it.
-- [ ] Every Thai run: `szCs` present, `<w:cs/>` absent (read back OOXML).
-- [ ] Embedded Latin/digits in TH paras are Arial 12pt; surrounding TH is Angsana New 14pt blue.
-- [ ] Acronyms/identifiers left untranslated per terminology policy.
-- [ ] Tables flat: every cell exactly 2 paragraphs, 0 nested tables; lists numbered continuously.
-- [ ] Non-software types: Safety block present (LOTO note where energy is involved).
-- [ ] `verify_doc` / `verify_doc_visual`: layout uniform, TH matches body size visually.
+- [ ] House styles applied: `Heading1–4`, `ThaiTranslate`, `Table`/`Text`.
+- [ ] Font is **AngsanaUPC** (cs) everywhere Thai is used; color `#0000FF`; `szCs` present; `<w:cs/>` absent.
+- [ ] Thai siblings present **only** on Safety + Procedure steps + Definitions labels; absent from Purpose/Scope/Reference/Equipment/Workflow/Appendices.
+- [ ] Acronyms/identifiers untranslated (PFS, AOI, HMI, PN, SN, IPA, RoHS, ESD…).
+- [ ] Filename + header carry `AYS/AYF<cust>-<7digits>-Rev<X>`.
+- [ ] Revision History has a row for the current rev listing section-number changes + Agile ECO.
+- [ ] AYF forms: landscape, machine-ID blanks, PM matrix, sign-off row, action record table.
+- [ ] Tables flat; heading/list numbering continuous via outline numbering.
 
-A worked machine-operation example: `reference/example-machine-sop.md`.
+Reference files: `reference/example-sop.md`, `reference/example-form.md`, `reference/glossary.md`, `reference/ooxml-snippets.md`.
