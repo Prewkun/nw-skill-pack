@@ -181,3 +181,16 @@ Replace the current gate with checks that reflect the house template:
   against ground truth; discovered named-style mechanism, AngsanaUPC font, correct
   section structure, revision workflow, and AYF form layout. Plan revised (this file).
 - **Next:** implement Phase 1 (Sonnet).
+- 2026-06-13 — Implemented Phases 1–4 on branch `claude/atm-improvement-plan-wvh584`:
+  - Phase 1: Rewrote `SKILL.md` — replaced 5 invented presets with AYS/AYF doc types,
+    corrected font to AngsanaUPC, corrected heading sizes (H1 14pt/sz28, H2 12pt/sz24),
+    primary path is named styles, relaxed bilingual rule (Safety + Procedure only),
+    demoted szCs pkg-injection to fallback.
+  - Phase 2: Added document identity section (AYS/AYF naming, core.xml fields),
+    Revision History table, and rev-update workflow.
+  - Phase 3: Added `reference/example-sop.md` (AYS structure distillation),
+    `reference/example-form.md` (AYF PM form layout), `reference/glossary.md`
+    (EN→TH term pairs + acronym keep-list). Updated `reference/ooxml-snippets.md`
+    to AngsanaUPC and framed as fallback path. Removed old `example-machine-sop.md`.
+  - Phase 4: Rewrote verification gate in `SKILL.md` to match house template reality.
+- **Status:** All 4 phases complete.
